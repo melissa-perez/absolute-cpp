@@ -4,6 +4,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+
     double hours_worked=0.00;
     int num_of_dep=0;
     double FULL_TIME=40.0;
@@ -26,7 +30,7 @@ int main(int argc, char *argv[])
     if(hours_worked>FULL_TIME){
     while(hours_worked>FULL_TIME){
         hours_worked-=FULL_TIME;
-        gross_pay+=hours_worked*(wage+0.5*wage);
+        gross_pay+=hours_worked*(wage+1.5*wage);
        }
     gross_pay+=FULL_TIME*wage;
     }
