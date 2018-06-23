@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    double hours_worked=0.00;
+    int num_of_dep=0;
+    double FULL_TIME=40.0;
+    double gross_pay=0.00;
+    double wage= 16.78;
+    double SSTAX=0.06;
+    double ss_amount=0.00;
+    double FIT=0.14;
+    double fit_amount=0.00;
+    double SIT =0.05;
+    double sit_amount=0.00;
+    const double UNION_DUES=10.0; //per week
+    const double THREE_OR_MORE_DEP=35.0;
+
+    cout<<"Enter the number of hours worked: ";
+    cin>>hours_worked;
+    cout<<endl<<"Enter the number of dependents: ";
+    cin>>num_of_dep;
+
+    if(hours_worked>FULL_TIME){
+    while(hours_worked>FULL_TIME){
+        hours_worked-=FULL_TIME;
+        gross_pay+=hours_worked*(wage+0.5*wage);
+       }
+    gross_pay+=FULL_TIME*wage;
+    }
+
+    else{
+        gross_pay+=(hours_worked*wage);
+    }
+
+    cout<<"\nThe gross pay is: $"<<gross_pay
+       <<endl;
+    ss_amount=gross_pay*SSTAX;
+    fit_amount=gross_pay*FIT;
+
+    sit_amount=gross_pay*SIT;
+
+    gross_pay=gross_pay-ss_amount-fit_amount-sit_amount;
+    gross_pay-=UNION_DUES;
+
+    cout<<"\nThe amount witheld for Social Security Tax: $"<<ss_amount
+       <<endl;
+    cout<<"\nThe amount witheld for Federal Income Tax: $"<<fit_amount
+       <<endl;
+    cout<<"\nThe amount witheld for State Income Tax: $"<<sit_amount
+       <<endl;
+    cout<<"\nThe amount witheld for Union Dues : $"<<UNION_DUES
+       <<endl;
+
+    if(num_of_dep>=3){
+        gross_pay-=THREE_OR_MORE_DEP;
+    cout<<"\nThe amount witheld for extra cost health insurance : $"<<THREE_OR_MORE_DEP
+       <<endl;
+    }
+
+    cout<<"\nThe net take-home pay is: $"<<gross_pay
+       <<endl;
+    return 0;
+}
