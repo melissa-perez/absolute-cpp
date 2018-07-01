@@ -18,10 +18,7 @@ int main(int argc, char *argv[])
     cout<<endl;
 
     volume=(4.0/3.0)*M_PI*pow(radius,3);
-    cout<<volume<<endl;
     force_b=volume*GAMMA;
-    cout<<force_b<<endl;
-    cout<<weight;
 
     if(force_b>=weight){
         cout<<"The object will float.\n";
