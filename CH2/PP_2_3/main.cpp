@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
             numberOfCoupons++;
         }
     }
-     cout<<"The total number of chocolate bar(s) are: "<<numberOfBars<<"."<<endl;
+     cout<<"The total number of chocolate bar(s) is: "<<numberOfBars<<"."<<endl;
      cout<<"You have "<<numberOfCoupons<<" coupon(s)left over."<<endl;
 
     return 0;
