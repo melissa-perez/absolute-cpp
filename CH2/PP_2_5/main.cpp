@@ -29,12 +29,5 @@ int main(int argc, char *argv[])
         if((T==9)&&(O==9)&&(D==9)&&(G==9)){break;}
         T++;
     }
-
-
-
-
-
-
-
     return 0;
 }
