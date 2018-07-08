@@ -128,6 +128,17 @@ for each additional inch. Create the following text in a text file. It contains 
 names and heights in feet and inches of Tom Atto (6'3"), Eaton Wright (5'5"),
 and Cary Oki (5'11"):
 Tom Atto
+3
+Eaton Wright
+5
+5
+Cary Oki
+5
+11
+Write a program that reads the data in the file and outputs the full name and ideal
+body weight for each person. Use a loop to read the names from the file. Your
+program should also handle an arbitrary number of entries in the file instead of
+handling only three entries.
 
 12. This problem is based on a “Nifty Assignment” by Steve Wolfman (http://nifty.
 stanford.edu/2006/wolfman-pretid). Consider lists of numbers from real-life data
@@ -146,14 +157,3 @@ as the first digit.
 If you read a number into the string variable named strNum then you can access
 the first digit as a char by using strNum[0] . This is described in more detail in
 Chapter 9 .
-3
-Eaton Wright
-5
-5
-Cary Oki
-5
-11
-Write a program that reads the data in the file and outputs the full name and ideal
-body weight for each person. Use a loop to read the names from the file. Your
-program should also handle an arbitrary number of entries in the file instead of
-handling only three entries.
