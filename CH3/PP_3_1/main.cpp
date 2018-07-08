@@ -8,6 +8,9 @@ double milesPerGallon(double litersConsumed, double milesTraveled);
 
 int main(int argc, char *argv[])
 {
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
     double litersConsumed = 0.0, milesTraveled=0.0,mpg=0.0;
     char userAnswer='a';
 
