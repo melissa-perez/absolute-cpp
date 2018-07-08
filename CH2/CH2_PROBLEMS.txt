@@ -1,0 +1,159 @@
+1. It is difficult to make a budget that spans several years, because prices are not
+stable. If your company needs 200 pencils per year, you cannot simply use this
+year’s price as the cost of pencils two years from now. Because of inflation the
+cost is likely to be higher than it is today. Write a program to gauge the expected
+cost of an item in a specified number of years. The program asks for the cost of
+the item, the number of years from now that the item will be purchased, and the
+rate of inflation. The program then outputs the estimated cost of the item after
+the specified period. Have the user enter the inflation rate as a percentage, such
+as 5.6 (percent). Your program should then convert the percentage to a decimal
+fraction, such as 0.056, and should use a loop to estimate the price adjusted for
+inflation. ( Hint: Use a loop.)
+
+2. You have just purchased a stereo system that cost $1,000 on the following credit
+plan: no down payment, an interest rate of 18% per year (1.5% per month), and
+monthly payments of $50. The monthly payment of $50 is used to pay the interest,
+and whatever is left is used to pay part of the remaining debt. Hence, the first
+month you pay 1.5% of $1,000 in interest. That is $15 in interest. The remaining
+$35 is deducted from your debt, which leaves you with a debt of $965.00. The
+next month you pay interest of 1.5% of $965.00, which is $14.48. Hence, you can
+deduct $35.52 (which is $50 - $14.48) from the amount you owe.
+Write a program that will tell you how many months it will take you to pay off
+the loan, as well as the total amount of interest paid over the life of the loan. Use a
+loop to calculate the amount of interest and the size of the debt after each month.
+(Your final program need not output the monthly amount of interest paid and
+remaining debt, but you may want to write a preliminary version of the program
+that does output these values.) Use a variable to count the number of loop iterations
+and hence the number of months until the debt is zero. You may want to use
+other variables as well. The last payment may be less than $50 if the debt is small,
+but do not forget the interest. If you owe $50, then your monthly payment of $50
+will not pay off your debt, although it will come close. One month's interest on
+$50 is only 75 cents.
+
+3. Suppose you can buy a chocolate bar from the vending machine for $1 each. Inside
+every chocolate bar is a coupon. You can redeem seven coupons for one chocolate
+bar from the machine. You would like to know how many chocolate bars you can
+eat, including those redeemed via coupon, if you have n dollars.
+For example, if you have 20 dollars then you can initially buy 20 chocolate bars.
+This gives you 20 coupons. You can redeem 14 coupons for two additional chocolate
+bars. These two additional chocolate bars give you two more coupons, so you
+now have a total of eight coupons. This gives you enough to redeem for one final
+chocolate bar. As a result you now have 23 chocolate bars and two leftover coupons.
+Write a program that inputs the number of dollars and outputs how many chocolate
+bars you can collect after spending all your money and redeeming as many
+coupons as possible. Also output the number of leftover coupons. The easiest way
+to solve this problem is to use a loop.
+4. Write a program that finds and prints all of the prime numbers between 3 and 100.
+A prime number is a number that can only be divided by one and itself (i.e., 3, 5,
+7, 11, 13, 17, …).
+One way to solve this problem is to use a doubly-nested loop. The outer loop can
+iterate from 3 to 100, while the inner loop checks to see whether the counter value
+for the outer loop is prime. One way to decide whether the number n is prime is
+to loop from 2 to n - 1 ; if any of these numbers evenly divides n , then n cannot be
+prime. If none of the values from 2 to n - 1 evenly divide n , then n must be prime.
+(Note that there are several easy ways to make this algorithm more efficient.)
+
+5. In cryptarithmetic puzzles, mathematical equations are written using letters. Each
+letter can be a digit from 0 to 9, but no two letters can be the same. Here is a
+sample problem:
+SEND + MORE = MONEY
+A solution to the puzzle is S = 9, R = 8, O = 0, M = 1, Y = 2, E = 5, N = 6, D = 7
+Write a program that fi nds solutions to the following cryptarithmetic puzzle:
+TOO + TOO + TOO + TOO = GOOD
+The simplest technique is to use a nested loop for each unique letter (in this case T,
+O, G, D). The loops would systematically assign the digits from 0–9 to each letter.
+For example, it might first try T = 0, O = 0, G = 0, D = 0, then T = 0, O = 0, G =0,
+D = 1, then T = 0, O = 0, G = 0, D = 2, etc. up to T = 9, O = 9, G = 9, D = 9.
+In the loop body, test that each variable is unique and that the equation is satisfied.
+Output the values for the letters that satisfy the equation.
+
+6. Buoyancy is the ability of an object to float. Archimedes’ Principle states that the
+buoyant force is equal to the weight of the fluid that is displaced by the submerged
+object. The buoyant force can be computed by
+Fb = V * g
+where Fb is the buoyant force, V is the volume of the submerged object, and g is
+the specific weight of the fluid. If Fb is greater than or equal to the weight of the
+object, then it will float, otherwise it will sink.
+Write a program that inputs the weight (in pounds) and radius (in feet) of a sphere
+and outputs whether the sphere will sink or float in water. Use g = 62.4 lb/ft 3 as
+the specific weight of water. The volume of a sphere is computed by (4/3)pr3 .
+
+7. Write a program that calculates the total grade for N classroom exercises as a percentage.
+The user should input the value for N followed by each of the N scores
+and totals. Calculate the overall percentage (sum of the total points earned divided
+by the total points possible) and output it as a percentage. Sample input and output
+are shown as follows:
+How many exercises to input? 3
+Score received for exercise 1: 10
+Total points possible for exercise 1: 10
+Score received for exercise 2: 7
+Total points possible for exercise 2: 12
+Score received for exercise 3: 5
+Total points possible for exercise 3: 8
+Your total is 22 out of 30, or 73.33%.
+
+8. Write a program that finds the temperature, as an integer, that is the same in
+both Celsius and Fahrenheit. The formula to convert from Celsius to Fahrenheit
+is as follows:
+Fahrenheit =
+9
+5
+Celsius + 32
+Your program should create two integer variables for the temperature in Celsius
+and Fahrenheit. Initialize the temperature to 100 degrees Celsius. In a loop, decrement
+the Celsius value and compute the corresponding temperature in Fahrenheit
+until the two values are the same.
+
+9. (This is an extension of an exercise from Chapter 1 .) The Babylonian algorithm to
+compute the square root of a positive number n is as follows:
+1. Make a guess at the answer (you can pick n/2 as your initial guess).
+2. Compute r = n / guess .
+3. Set guess= (guess + r) / 2.
+4. Go back to step 2 for as many iterations as necessary. The more steps 2 and 3 are
+repeated, the closer guess will become to the square root of n.
+Write a program that inputs a double for n, iterates through the Babylonian
+algorithm until the guess is within 1% of the previous guess, and outputs the
+answer as a double to two decimal places. Your answer should be accurate even for
+large values of n.
+
+10. Create a text fi le that contains the text “I hate C++ and hate programming!” Write
+a program that reads in the text from the fi le and outputs each word to the console
+but replaces any occurrence of “hate” with “love.” Your program should work with
+any line of text that contains the word “hate,” not just the example given in this
+problem.
+
+11. (This is an extension of an exercise from Chapter 1 .) A simple rule to estimate your
+ideal body weight is to allow 110 pounds for the first 5 feet of height and 5 pounds
+for each additional inch. Create the following text in a text file. It contains the
+names and heights in feet and inches of Tom Atto (6'3"), Eaton Wright (5'5"),
+and Cary Oki (5'11"):
+Tom Atto
+
+12. This problem is based on a “Nifty Assignment” by Steve Wolfman (http://nifty.
+stanford.edu/2006/wolfman-pretid). Consider lists of numbers from real-life data
+sources, for example, a list containing the number of students enrolled in different
+course sections, the number of comments posted for different Facebook status
+updates, the number of books in different library holdings, the number of votes per
+precinct, etc. It might seem like the leading digit of each number in the list should
+be 1–9 with an equally likely probability. However, Benford’s Law states that the
+leading digit is 1 about 30% of the time and drops with larger digits. The leading
+digit is 9 only about 5% of the time.
+Write a program that tests Benford’s Law. Collect a list of at least one hundred
+numbers from some real-life data source and enter them into a text file. Your program
+should loop through the list of numbers and count how many times 1 is the
+first digit, 2 is the first digit, etc. For each digit, output the percentage it appears
+as the first digit.
+If you read a number into the string variable named strNum then you can access
+the first digit as a char by using strNum[0] . This is described in more detail in
+Chapter 9 .
+3
+Eaton Wright
+5
+5
+Cary Oki
+5
+11
+Write a program that reads the data in the file and outputs the full name and ideal
+body weight for each person. Use a loop to read the names from the file. Your
+program should also handle an arbitrary number of entries in the file instead of
+handling only three entries.
