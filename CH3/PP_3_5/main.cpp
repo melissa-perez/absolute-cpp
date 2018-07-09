@@ -48,12 +48,12 @@ double jacketSize(double userHeight, double userWeight, int userAge)
 {
     double adjustment=0.0;
 
-    if(userAge>30 && userAge%10==0){
-        while(userAge>30){
+
+        while(userAge>=40){
             adjustment+=0.125;
             userAge-=10;
         }
-    }
+
     return(((userHeight*userWeight)/288)+adjustment);
 }
 
@@ -61,12 +61,10 @@ double waistSize(double userWeight, int userAge)
 {
     double adjustment=0.0;
 
-    if(userAge>28 && userAge%2==0){
-        while(userAge>28){
+        while(userAge>=30){
             adjustment+=0.1;
             userAge-=2;
         }
-    }
 
     return((userWeight/5.7)+adjustment);
 }
