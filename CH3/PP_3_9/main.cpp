@@ -1,3 +1,7 @@
+//Over the long run, the probability of winning against the house and vice-versa is close to 50-50 using no seed and seed outcomes.
+//Making craps + pass line bet an almost fair casino game to play and win!
+
+
 #include <iostream>
 #include <cstdlib>
 #include <ctime> //to make the dice rolls a bit more random
