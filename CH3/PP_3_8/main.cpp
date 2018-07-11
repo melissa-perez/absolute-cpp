@@ -5,7 +5,6 @@
 using namespace std;
 
 string baseNumbers(int verseNumber1,int verseNumber2);
-void specialNumbers();
 int main(int argc, char *argv[])
 {
     string bottle =" bottle";
