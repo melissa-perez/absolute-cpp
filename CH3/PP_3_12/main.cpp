@@ -24,11 +24,8 @@ int main(int argc, char *argv[])
     cin>>year;
 
     monthValue=getMonthValue(month,year);
-    //cout<<monthValue<<endl;
     centuryValue=getCenturyValue(year);
-    //cout<<centuryValue<<endl;
     yearValue=getYearValue(year);
-    //cout<<yearValue;
 
     cout<<endl<<"The day of week on the date ("<<month<<"\\"<<day<<"\\"<<year<<") is "
        <<theWeekDay(numberOfDay(day,monthValue,centuryValue,yearValue))<<"."<<endl;
@@ -113,7 +110,6 @@ int numberOfDay (int day,int monthValue, int centuryValue, int yearValue)
 
 string theWeekDay(int dayNumber)
 {
-   // cout<<dayNumber;
     switch (dayNumber) {
     case 1:
         return "Monday";
