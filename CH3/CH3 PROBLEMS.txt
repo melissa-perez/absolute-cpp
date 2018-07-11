@@ -1,0 +1,204 @@
+1. A liter is 0.264179 gallons. Write a program that will read in the number of liters
+of gasoline consumed by the user’s car and the number of miles traveled by the
+car and will then output the number of miles per gallon the car delivered. Your
+program should allow the user to repeat this calculation as often as the user wishes.
+Define a function to compute the number of miles per gallon. Your program
+should use a globally defined constant for the number of liters per gallon.
+
+2. Write a program to gauge the rate of inflation for the past year. The program asks
+for the price of an item (such as a hot dog or a one-carat diamond) both one year
+ago and today. It estimates the inflation rate as the difference in price divided by
+the year-ago price. Your program should allow the user to repeat this calculation
+as often as the user wishes. Define a function to compute the rate of inflation. The
+inflation rate should be a value of type double giving the rate as a percentage, for
+example 5.3 for 5.3%.
+
+3. Enhance your program from the previous exercise by having it also print out the
+estimated price of the item in one and in two years from the time of the calculation.
+The increase in cost over one year is estimated as the inflation rate times the price
+at the start of the year. Define a second function to determine the estimated cost
+of an item in a specified number of years, given the current price of the item and
+the inflation rate as arguments.
+4. The gravitational attractive force between two bodies with masses m1 and m2 separated
+by a distance d is given by the following formula,
+F =
+Gm1m2
+d2
+where G is the universal gravitational constant:
+G = 6.673 * 10 -8 cm 3>(g • sec 2 )
+Write a function definition that takes arguments for the masses of two bodies
+and the distance between them and returns the gravitational force between them.
+Since you will use the previous formula, the gravitational force will be in dynes.
+One dyne equals a
+g • cm/sec 2
+You should use a globally defined constant for the universal gravitational constant.
+Embed your function definition in a complete program that computes the gravitational
+force between two objects given suitable inputs. Your program should allow
+the user to repeat this calculation as often as the user wishes.
+
+5. Write a program that asks for the user’s height, weight, and age, and then computes
+clothing sizes according to the following formulas.
+• Hat size = weight in pounds divided by height in inches and all that multiplied
+by 2.9.
+• Jacket size (chest in inches) = height times weight divided by 288 and then
+adjusted by adding one-eighth of an inch for each 10 years over age 30. (Note
+that the adjustment only takes place after a full 10 years. So, there is no adjustment
+for ages 30 through 39, but one-eighth of an inch is added for age 40.)
+• Waist in inches = weight divided by 5.7 and then adjusted by adding one-tenth
+of an inch for each 2 years over age 28. (Note that the adjustment only takes
+place after a full 2 years. So, there is no adjustment for age 29, but one-tenth
+of an inch is added for age 30.)
+Use functions for each calculation. Your program should allow the user to repeat
+this calculation as often as he or she wishes.
+
+6. Write a function that computes the average and standard deviation of four scores.
+The standard deviation is defined to be the square root of the average of the four
+values: (s i - a ) 2 , where a is the average of the four scores s 1 , s 2 , s 3 , and s4 . The function
+will have six parameters and will call two other functions. Embed the function
+in a program that allows you to test the function again and again until you tell the
+program you are finished.
+
+7. In cold weather, meteorologists report an index called the wind chill factor , which
+takes into account the wind speed and the temperature. The index provides a
+measure of the chilling effect of wind at a given air temperature. Wind chill may
+be approximated by the following formula,
+w = 33 -
+1102v - v + 10.52133 - t2
+23.1
+where
+v = wind speed in m/sec
+t = temperature in degrees Celsius: t 6= 10
+W = wind chill index (in degrees Celsius)
+Write a function that returns the wind chill index. Your code should ensure that
+the restriction on the temperature is not violated. Look up some weather reports
+in back issues of a newspaper in your library and compare the wind chill index you
+calculate with the result reported in the newspaper.
+
+8 . Write a program that outputs all 99 stanzas of the “Ninety-Nine Bottles of Beer
+on the Wall” song. Your program should print the number of bottles in English,
+not as a number:
+Ninety-nine bottles of beer on the wall,
+Ninety-nine bottles of beer,
+Take one down, pass it around,
+Ninety-eight bottles of beer on the wall.
+…
+One bottle of beer on the wall,
+One bottle of beer,
+Take one down, pass it around,
+Zero bottles of beer on the wall.
+Your program should not use ninety-nine different output statements!
+
+9. In the game of craps, a “Pass Line” bet proceeds as follows. The first roll of the two,
+six-sided dice in a craps round is called the “come out roll.” The bet immediately
+wins when the come out roll is 7 or 11, and loses when the come out roll is 2, 3,
+or 12. If 4, 5, 6, 8, 9, or 10 is rolled on the come out roll, that number becomes
+“the point.” The player keeps rolling the dice until either 7 or the point is rolled.
+If the point is rolled first, then the player wins the bet. If the player rolls a 7 first,
+then the player loses.
+Write a program that plays craps using those rules so that it simulates a game without
+human input. Instead of asking for a wager, the program should calculate whether
+the player would win or lose. Create a function that simulates rolling the two dice
+and returns the sum. Add a loop so that the program plays 10,000 games. Add
+counters that count how many times the player wins, and how many times the
+player loses. At the end of the 10,000 games, compute the probability of winning,
+as Wins / (Wins + Losses), and output this value. Over the long run, who is going
+to win more games of craps, you or the house?
+
+10. One way to estimate the height of a child is to use the following formula, which
+uses the height of the parents:
+Hmale_child = (( Hmother 13>12) + Hfather )>2
+Hfemale_child = (( Hfather 12>13) + Hmother )>2
+All heights are in inches. Write a function that takes as input parameters the gender
+of the child, height of the mother in inches, and height of the father in inches,
+and outputs the estimated height of the child in inches. Embed your function in a
+program that allows you to test the function over and over again until telling the
+program to exit. The user should be able to input the heights in feet and inches,
+and the program should output the estimated height of the child in feet and inches.
+Use the integer data type to store the heights.
+
+11. The game of Pig is a simple two player dice game in which the first player to
+reach 100 or more points wins. Players take turns. On each turn a player rolls a
+six-sided die:
+• If the player rolls a 2–6 then he or she can either
+— ROLL AGAIN or
+— HOLD. At this point the sum of all rolls made this turn is added to the
+player’s total score and it becomes the other player’s turn.
+• If the player rolls a 1 then the player loses his or her turn. The player gets no
+new points and it becomes the opponent’s turn.
+If a player reaches 100 or more points after holding then the player wins.
+Write a program that plays the game of Pig, where one player is a human and the
+other is the computer. Allow the human to input “r” to roll again or “h” to hold.
+The computer program should play according to the following rule: Keep rolling
+on the computer’s turn until it has accumulated 20 or more points, then hold. Of
+course, if the computer wins or rolls a 1 then the turn ends immediately. Allow the
+human to roll first.
+Write your program using at least two functions:
+int humanTurn( int humanTotalScore);
+int computerTurn( int computerTotalScore);
+These functions should perform the necessary logic to handle a single turn for
+either the computer or the human. The input parameter is the total score for the
+human or computer. The functions should return the turn total to be added to the
+total score upon completion of the turn. For example, if the human rolls a 3 and
+6 and then holds, then humanTurn should return 9. However, if the human rolls a
+3 and 6 and then a 1, then the function should return 0.
+
+12. Write a program that inputs a date (e.g., July 4, 2008) and outputs the day of
+the week that corresponds to that date. The following algorithm is from http://
+en.wikipedia.org/wiki/Calculating_the_day_of_the_week. The implementation
+will require several functions:
+bool isLeapYear(int year);
+This function should return true if year is a leap year and false if it is not. Here
+is pseudocode to determine a leap year:
+leap_year = ((year divisible by 400) or (year divisible by 4 and year not divisible
+by 100))
+int getCenturyValue(int year);
+This function should take the first two digits of the year (i.e., the century), divide
+by 4, and save the remainder. Subtract the remainder from 3 and return this
+value multiplied by 2. For example, the year 2008 becomes (20/4) = 5 remainder
+0. 3 - 0 = 3. Return 3 * 2 = 6.
+
+This function computes a value based on the years since the beginning of the
+century. First, extract the last two digits of the year. For example, 08 is extracted
+for 2008. Next, factor in leap years. Divide the value from the previous step by 4
+and discard the remainder. Add the two results together and return this value. For
+example, from 2008 we extract 08. Then (8/4) = 2 remainder 0. Return 2 + 8 = 10.
+int getMonthValue( int month, int year);
+This function should return a value based on the following table and will require
+invoking the isLeapYear function:
+MONTH RETURN VALUE
+January 0 (6 if year is a leap year)
+February 3 (2 if year is a leap year)
+March 3
+April 6
+May 1
+June 4
+July 6
+August 2
+September 5
+October 0
+November 3
+December 5
+int getYearValue(int year);
+Finally, to compute the day of the week, compute the sum of the date’s
+day plus the values returned by getMonthValue, getYearValue , and
+getCenturyValue . Divide the sum by 7 and compute the remainder. A
+remainder of 0 corresponds to Sunday, 1 corresponds to Monday, etc.—up to
+6—which corres ponds to Saturday. For example, the date July 4, 2008 should
+be computed as (day of month) + ( getMonthValue ) + ( getYearValue ) +
+(get CenturyValue ) = 4 + 6 + 10 + 6 = 26. 26/7 = 3 remainder 5. The fifth
+day of the week corresponds to Friday.
+Your program should allow the user to enter any date and output the corresponding
+day of the week in English.
+
+13. You have four identical prizes to give away and a pool of 25 finalists. The finalists
+are assigned numbers from 1 to 25. Write a program to randomly select the
+numbers of 4 finalists to receive a prize. Make sure not to pick the same number
+twice. For example, picking finalists 3, 15, 22, and 14 would be valid but picking
+3, 3, 31, and 17 would be invalid, because finalist number 3 is listed twice and 31
+is not a valid finalist number.
+
+14. Programming Project 2.9 asked you to implement the Babylonian Algorithm to
+compute the square root of a number.
+Put this algorithm into a function and test it by using it to calculate the square root
+of several numbers. The function should return the square root as a double and
+also process the number n as a double.
