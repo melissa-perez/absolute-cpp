@@ -65,6 +65,6 @@ void convertFTandIN(double feet, double inches, double &meters, double &centimet
 void displayMandCM(double feet, double inches,double meters, double centimeters)
 {
     cout<<"Converted: "<<feet<<" ft. "<<inches<<" in. to"<<endl;
-    cout<<meters<<" m. "<<centimeters<<" cm."<<" or "<<meters+(centimeters/CM_TO_M)<<" m. "<<"or "<<(meters+(centimeters/CM_TO_M))*CM_TO_M<<" cm."<<endl;
+    cout<<meters<<" m. "<<centimeters<<" cm."<<" or "<<meters+(centimeters/100.0)<<" m. "<<"or "<<(meters+(centimeters/100.0))*100.0<<" cm."<<endl;
 
 }
