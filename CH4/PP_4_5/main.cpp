@@ -41,7 +41,7 @@ void inputMandCM(double &meter, double &centimeter)
     do{
         cout<<"Please enter how many meter(s): ";
         cin>>meter;
-        cout<<"and how centimeter(s): ";
+        cout<<"and how many centimeter(s): ";
         cin>>centimeter;
     }while(verifyMeasurements(meter,centimeter)==0);
 }

@@ -39,9 +39,9 @@ int main(int argc, char *argv[])
 void inputFTandIN(double &feet, double &inches)
 {
     do{
-        cout<<"Please enter how many feet: ";
+        cout<<"Please enter how many feet or foot: ";
         cin>>feet;
-        cout<<"and how inches: ";
+        cout<<"and how many inch(es): ";
         cin>>inches;
     }while(verifyMeasurements(feet,inches)==0);
 }
