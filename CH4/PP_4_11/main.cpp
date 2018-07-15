@@ -1,5 +1,6 @@
 //The win rate is around 66% when you switch doors instead of staying. To
-//optimize winning the player should switch doors. Although keeping the same door, might seem to work in smaller trials, it does not optimize winning.
+//optimize winning the player should switch doors. Although keeping the same door
+//might seem to work in smaller trials, it does not optimize winning.
 
 
 #include <iostream>
