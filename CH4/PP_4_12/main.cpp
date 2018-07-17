@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     double aaronWins=0, bobWins=0,charlieWins=0;
     srand(time(NULL));
 
-    for(int i =1;i<DUEL_COUNT;i++){
+    for(int i =1;i<=DUEL_COUNT;i++){
         bool aaronAlive=1, bobAlive=1,charlieAlive=1;
         do{
             aaronTurn(bobAlive,charlieAlive,aaronAlive);
