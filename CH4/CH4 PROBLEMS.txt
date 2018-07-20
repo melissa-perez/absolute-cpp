@@ -1,0 +1,217 @@
+1. Write a program that converts from 24-hour notation to 12-hour notation. For
+example, it should convert 14:25 to 2:25 P.M. The input is given as two integers.
+There should be at least three functions: one for input, one to do the conversion,
+and one for output. Record the A.M./P.M. information as a value of type char ,
+'A' for A.M. and 'P' for P.M. Thus, the function for doing the conversions will
+have a call-by-reference formal parameter of type char to record whether it is A.M.
+or P.M. (The function will have other parameters as well.) Include a loop that lets
+the user repeat this computation for new input values again and again until the user
+says he or she wants to end the program.
+
+2. The area of an arbitrary triangle can be computed using the formula
+Area = 2s1s - a21s - b21s - c2
+where a, b, and c are the lengths of the sides, and s is the semiperimeter.
+s = 1a + b + c2>2
+Write a void function that uses five parameters: three value parameters that provide
+the lengths of the edges, and two reference parameters that compute the area
+and perimeter ( not the semiperimeter ). Make your function robust. Note that not
+all combinations of a, b, and c produce a triangle. Your function should produce
+correct results for legal data and reasonable results for illegal combinations.
+
+3. Write a program that tells what coins to give out for any amount of change from
+1 cent to 99 cents. For example, if the amount is 86 cents, the output would be
+something like the following:
+86 cents can be given as
+3 quarter(s) 1 dime(s) and 1 penny(pennies)
+Use coin denominations of 25 cents (quarters), 10 cents (dimes), and 1 cent (pennies).
+Do not use nickel and half-dollar coins. Your program will use the following
+function (among others):
+void computeCoin( int coinValue, int& number, int& amountLeft);
+//Precondition: 0 < coinValue < 100; 0 <= amountLeft < 100.
+//Postcondition: number has been set equal to the maximum number
+//of coins of denomination coinValue cents that can be obtained
+//from amountLeft cents. amountLeft has been decreased by the
+//value of the coins, that is, decreased by number*coinValue .
+For example, suppose the value of the variable amountLeft is 86 . Then, after the
+following call, the value of number will be 3 and the value of amountLeft will be 11
+(because if you take three quarters from 86 cents, that leaves 11 cents):
+computeCoins(25, number, amountLeft);
+Include a loop that lets the user repeat this computation for new input values until
+the user says he or she wants to end the program. ( Hint: Use integer division and
+the % operator to implement this function.)
+
+4. Write a program that will read in a length in feet and inches and output the equivalent
+length in meters and centimeters. Use at least three functions: one for input,
+one or more for calculating, and one for output. Include a loop that lets the user
+repeat this computation for new input values until the user says he or she wants to
+end the program. There are 0.3048 meters in a foot, 100 centimeters in a meter,
+and 12 inches in a foot.
+
+5. Write a program like that of the previous exercise that converts from meters and
+centimeters into feet and inches. Use functions for the subtasks.
+
+6. (You should do the previous two programming projects before doing this one.)
+Write a program that combines the functions in the previous two programming
+projects. The program asks the user if he or she wants to convert from feet and
+inches to meters and centimeters or from meters and centimeters to feet and inches.
+The program then performs the desired conversion. Have the user respond by typing
+the integer 1 for one type of conversion and 2 for the other conversion. The
+program reads the user’s answer and then executes an if-else statement. Each
+branch of the if-else statement will be a function call. The two functions called
+in the if-else statement will have function definitions that are very similar to
+the programs for the previous two programming projects. Thus, they will be fairly
+complicated function definitions that call other functions. Include a loop that lets
+the user repeat this computation for new input values until the user says he or she
+wants to end the program.
+
+7. Write a program that will read in a weight in pounds and ounces and will output
+the equivalent weight in kilograms and grams. Use at least three functions: one for
+input, one or more for calculating, and one for output. Include a loop that lets
+the user repeat this computation for new input values until the user says he or she
+wants to end the program. There are 2.2046 pounds in a kilogram, 1000 grams in
+a kilogram, and 16 ounces in a pound.
+
+8. Write a program like that of the previous exercise that converts from kilograms and
+grams into pounds and ounces. Use functions for the subtasks.
+
+9. (You should do the previous two programming projects before doing this one.)
+reads the user’s answer and then executes an if-else statement. Each branch of
+the if-else statement will be a function call. The two functions called in the
+if-else statement will have function definitions that are very similar to the programs
+for the previous two programming projects. Thus, they will be fairly complicated
+function definitions that call other functions in their function bodies. Include a
+loop that lets the user repeat this computation for new input values until the user
+says he or she wants to end the program.
+
+10. (You should do Programming Projects 4.6 and 4.9 before doing this programming
+project.) Write a program that combines the functions of Programming
+Projects 4.6 and 4.9. The program asks the user if he or she wants to convert
+lengths or weights. If the user chooses lengths, then the program asks the user if
+he or she wants to convert from feet and inches to meters and centimeters or from
+meters and centimeters to feet and inches. If the user chooses weights, a similar
+question about pounds, ounces, kilograms, and grams is asked. The program then
+performs the desired conversion. Have the user respond by typing the integer 1 for
+one type of conversion and 2 for the other. The program reads the user’s answer
+and then executes an if-else statement. Each branch of the if-else statement
+will be a function call. The two functions called in the if-else statement will
+have function definitions that are very similar to the programs for Programming
+Projects 4.6 and 4.9. Thus, these functions will be fairly complicated function
+definitions that call other functions; however, they will be very easy to
+write by adapting the programs you wrote for Programming Projects 4.6 and
+4.9. Notice that your program will have if-else statements embedded inside of
+if-else statements, but only in an indirect way. The outer if-else statement
+will include two function calls, as its two branches. These two function calls will
+each in turn include an if-else statement, but you need not think about that.
+They are just function calls and the details are in a black box that you create when
+you define these functions. If you try to create a four-way branch, you are probably
+on the wrong track. You should only need to think about two-way branches (even
+though the entire program does ultimately branch into four cases). Include a loop
+that lets the user repeat this computation for new input values until the user says
+he or she wants to end the program.
+
+11. You are a contestant on a game show and have won a shot at the grand prize.
+Before you are three doors. $1,000,000 in cash has randomly been placed behind
+one door. Behind the other two doors are the consolation prizes of dishwasher
+detergent. The game show host asks you to select a door, and you randomly pick
+one. However, before revealing the prize behind your door, the game show host
+reveals one of the other doors that contains a consolation prize. At this point, the
+game show host asks if you would like to stick with your original choice or to
+switch to the remaining door.
+Write a function to simulate the game show problem. Your function should randomly
+select locations for the prizes, select a door at random chosen by the contestant,
+and then determine whether the contestant would win or lose by sticking with
+the original choice or switching to the remaining door. You may wish to create
+additional functions invoked by this function.
+Next, modify your program so that it simulates playing 10,000 games. Count the
+number of times the contestant wins when switching versus staying. If you are
+the contestant, what choice should you make to optimize your chances of winning
+the cash, or does it not matter?
+
+12. In the land of Puzzlevania, Aaron, Bob, and Charlie had an argument over which
+one of them was the greatest puzzle-solver of all time. To end the argument once
+and for all, they agreed on a duel to the death. Aaron was a poor shot and only hit
+his target with a probability of 1/3. Bob was a bit better and hit his target with a
+probability of 1/2. Charlie was an expert marksman and never missed. A hit means
+a kill and the person hit drops out of the duel.
+To compensate for the inequities in their marksmanship skills, the three decided
+that they would fire in turns, starting with Aaron, followed by Bob, and then by
+Charlie. The cycle would repeat until there was one man standing. That man
+would be remembered for all time as the Greatest Puzzle-Solver of All Time.
+An obvious and reasonable strategy is for each man to shoot at the most accurate
+shooter still alive, on the grounds that this shooter is the deadliest and has the best
+chance of hitting back.
+Write a program to simulate the duel using this strategy. Your program should use
+random numbers and the probabilities given in the problem to determine whether
+a shooter hits his target. You will likely want to create multiple subroutines and
+functions to complete the problem. Once you can simulate a duel, add a loop to
+your program that simulates 10,000 duels. Count the number of times that each
+contestant wins and print the probability of winning for each contestant (e.g., for
+Aaron your program might output “Aaron won 3595/10,000 duels or 35.95%”).
+An alternate strategy is for Aaron to intentionally miss on his first shot. Modify the
+program to accommodate this new strategy and output the probability of winning
+for each contestant. What strategy is better for Aaron, to intentionally miss on the
+first shot or to try and hit the best shooter?
+
+13. You would like to know how fast you can run in miles per hour. Your treadmill
+will tell you your speed in terms of a pace (minutes and seconds per mile, such as
+“5:30 mile”) or in terms of kilometers per hour (kph).
+Write an overloaded function called convertToMPH . The first definition should
+take as input two integers that represent the pace in minutes and seconds per mile
+and return the speed in mph as a double. The second definition should take as
+input one double that represents the speed in kph and return the speed in mph as
+a double. One mile is approximately 1.61 kilometers. Write a driver program to
+test your function.
+
+14. Your time machine is capable of going forward in time up to 24 hours. The machine
+is configured to jump ahead in minutes. To enter the proper number of minutes
+into your machine, you would like a program that can take a start time and an
+end time and calculate the difference in minutes between them. The end time will
+Write a program that combines the functions of the previous two programming
+projects. The program asks the user if he or she wants to convert from pounds
+and ounces to kilograms and grams or from kilograms and grams to pounds and
+ounces. The program then performs the desired conversion. Have the user respond
+by typing the integer 1 for one type of conversion and 2 for the other. The program
+always be within 24 hours of the start time. Use military notation for both the start
+and end times (e.g., 0000 for midnight and 2359 for one minute before midnight).
+Write a function that takes as input a start time and an end time represented as an
+int , using military notation. The function should return the difference in minutes
+as an integer. Write a driver program that calls your subroutine with times entered
+by the user.
+Hint: Be careful of time intervals that start before midnight and end the following day.
+
+15. Write a function named convertToLowestTerms that inputs two integer parameters
+by reference named numerator and denominator . The function should treat
+these variables as a fraction and reduce them to lowest terms. For example, if
+numerator is 20 and denominator is 60, then the function should change the
+variables to 1 and 3, respectively. This will require finding the greatest common
+divisor for the numerator and denominator then dividing both variables by that
+number. If the denominator is zero, the function should return false , otherwise the
+function should return true . Write a test program that uses convertToLowestTerms
+to reduce and output several fractions.
+
+16. Consider a text file named scores.txt that contains player scores for a game. A
+possible sample is shown here where Ronaldo’s best score is 10400, Didier’s best
+score is 9800, etc.
+Ronaldo
+10400
+Didier
+9800
+Pele
+12300
+Kaka
+8400
+Cristiano
+8000
+Write a function named getHighScore that takes a string reference parameter and
+an integer reference parameter. The function should scan through the file and set
+the reference parameters to the name of the player with the highest score and the
+corresponding score.
+
+17. Write a function named sort that takes three integer parameters by reference. The
+function should rearrange the parameter values so that the first parameter gets set
+to the smallest value, the second parameter gets set to the second smallest value,
+and the third parameter gets set to the largest value. For example, given the variable
+assignments a = 30; b = 10; c = 20; then the function call sort(a,b,c)
+should result in a = 10, b = 20, and c = 30. Note that the array construct covered
+in Chapter 5 will give you a way to solve this problem for an arbitrary number of
+items instead of only for three items.
