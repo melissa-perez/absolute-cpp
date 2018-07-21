@@ -57,7 +57,7 @@ void userInput(const string months[],double avgRainfall[],double actRainfall[],i
 
 void averageRainfall(const string months[],double avgRF[])
 {
-    cout<<"Enter the average rainfall for all the months."<<endl;
+    cout<<"Enter the average rainfall for all the previous months."<<endl;
 
     for(int i=0;i<MONTHS_IN_YEAR;i++){
         cout<<"For "<<months[i]<<": ";
@@ -114,7 +114,10 @@ void displayTable(const string months[],const double avgRF[],const double actRF[
     cout<<"\nRainfall Information"<<endl;
     cout<<"Month"<<setw(5)<<" Actual "<<setw(5)<<" Difference "<<endl;
     for(int i=0;i<MONTHS_IN_YEAR;i++){
-       cout<<months[i]<<setw(5)<<actRF[i]<<setw(10)<<actRF[i]-avgRF[i]<<endl;
+       cout<<months[i]<<setw(5)<<actRF[i]<<setw(10)<<actRF[i]-avgRF[i];
+       cout<<"\t";
+       actRF[i]-avgRF[i]<0?cout<<"Below":(actRF[i]-avgRF[i]==0)?cout<<"No change":cout<<"Above";
+       cout<<endl;
     }
 }
 
