@@ -35,7 +35,6 @@ void sideInput(double &length1, double &length2, double &length3)
         cin>>length3;
     }while(checkSides(length1,length2,length3));
 
-
 }
 
 void triangleHeron(double length1, double length2, double length3, double& areaH, double& perimeter)

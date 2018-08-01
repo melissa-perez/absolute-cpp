@@ -12,7 +12,6 @@ void sort(int countArray[][2],int uniqueEntry);
 void swapValues(int& v1, int& v2);
 int indexOfLargest(int countArray[][2],int startIndex, int uniqueEntry);
 
-
 int main(int argc, char *argv[])
 {
     int numberUsed=0,uniqueEntry=0;

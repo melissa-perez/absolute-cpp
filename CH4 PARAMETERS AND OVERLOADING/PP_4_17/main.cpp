@@ -7,7 +7,6 @@ int main(int argc, char *argv[])
 {
     int a=0,b=0,c=0;
 
-
     cout<<"Enter the first number: ";
     cin>>a;
     cout<<"Enter the second number: ";

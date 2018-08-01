@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-
 double convertToMPH(int minutes, int seconds)
 {
     double totalMins=minutes+(seconds/60.0);
