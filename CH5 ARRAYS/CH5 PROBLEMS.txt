@@ -1,0 +1,356 @@
+1. Write a program that reads in the average monthly rainfall for a city for each month
+of the year and then reads in the actual monthly rainfall for each of the previous
+12 months. The program then prints out a nicely formatted table showing the rainfall
+for each of the previous 12 months as well as how much above or below average the
+rainfall was for each month. The average monthly rainfall is given for the months
+January, February, and so forth, in order. To obtain the actual rainfall for the previous
+12 months, the program first asks what the current month is and then asks for the rainfall
+figures for the previous 12 months. The output should correctly label the months.
+There are a variety of ways to deal with the month names. One straightforward
+method is to code the months as integers and then do a conversion before doing the
+output. A large switch statement is acceptable in an output function. The month
+input can be handled in any manner you wish, as long as it is relatively easy and
+pleasant for the user.
+
+After you have completed the previous program, produce an enhanced version
+that also outputs a graph showing the average rainfall and the actual rainfall for
+each of the previous 12 months. The graph should be similar to the one shown in
+Display 5.4 , except that there should be two bar graphs for each month and they
+should be labeled as the average rainfall and the rainfall for the most recent month.
+Your program should ask the user whether he or she wants to see the table or the
+bar graph, and then should display whichever format is requested. Include a loop
+that allows the user to see either format as often as the user wishes until the user
+requests that the program end.
+
+2. Write a function called deleteRepeats that has a partially filled array of characters
+as a formal parameter and that deletes all repeated letters from the array. Since a
+partially filled array requires two arguments, the function will actually have two
+formal parameters: an array parameter and a formal parameter of type int that
+gives the number of array positions used. When a letter is deleted, the remaining
+letters are moved forward to fill in the gap. This will create empty positions at
+the end of the array so that less of the array is used. Since the formal parameter is
+a partially filled array, a second formal parameter of type int will tell how many
+array positions are filled. This second formal parameter will be a call-by-reference
+parameter and will be changed to show how much of the array is used after the
+repeated letters are deleted. For example, consider the following code:
+char a[10];
+a[0] = 'a';
+a[1] = 'b';
+a[2] = 'a';
+a[3] = 'c';
+int size = 4;
+deleteRepeats(a, size);
+After this code is executed, the value of a[0] is 'a' , the value of a[1] is 'b' , the
+value of a[2] is 'c' , and the value of size is 3 . (The value of a[3] is no longer of
+any concern, since the partially filled array no longer uses this indexed variable.)
+You may assume that the partially filled array contains only lowercase letters.
+Embed your function in a suitable test program.
+
+3. The standard deviation of a list of numbers is a measure of how much the numbers
+deviate from the average. If the standard deviation is small, the numbers are
+clustered close to the average. If the standard deviation is large, the numbers are
+scattered far from the average. The standard deviation, S , of a list of N numbers xi
+is defined as follows,
+S = H
+a N
+i=1
+1xi - x22
+N
+
+where x is the average of the N numbers x1 , x2 , …. Define a function that takes a
+partially filled array of numbers as its argument and returns the standard deviation
+of the numbers in the partially filled array. Since a partially filled array requires two
+arguments, the function will actually have two formal parameters: an array parameter
+and a formal parameter of type int that gives the number of array positions used.
+The numbers in the array will be of type double . Embed your function in a suitable
+test program.
+
+4. Write a program that reads in an array of type int . You may assume that there
+are fewer than 50 entries in the array. Your program determines how many entries
+are used. The output is to be a two-column list. The first column is a list of the
+distinct array elements; the second column is the count of the number of occurrences
+of each element. The list should be sorted on entries in the first column,
+largest to smallest.
+For the array values
+–12 3 –12 4 1 1 –12 1 –1 1 2 3 4 2 3 –12
+the output should be
+N Count
+4 2
+3 3
+2 2
+1 4
+–1 1
+–12 4
+
+5. An array can be used to store large integers one digit at a time. For example, the
+integer 1234 could be stored in the array a by setting a[0] to 1 , a[1] to 2 , a[2]
+to 3 , and a[3] to 4 . However, for this exercise you might find it more useful to
+store the digits backward, that is, place 4 in a[0] , 3 in a[1] , 2 in a[2] , and 1 in
+a[3] . In this exercise you will write a program that reads in two positive integers
+that are 20 or fewer digits in length and then outputs the sum of the two numbers.
+Your program will read the digits as values of type char so that the number
+1234 is read as the four characters '1' , '2' , '3' , and '4' . After they are read into
+the program, the characters are changed to values of type int . The digits will be
+read into a partially filled array, and you might find it useful to reverse the order
+of the elements in the array after the array is filled with data from the keyboard.
+(Whether or not you reverse the order of the elements in the array is up to you. It
+can be done either way, and each way has its advantages and disadvantages.) Your
+program will perform the addition by implementing the usual paper-and-pencil
+addition algorithm. The result of the addition is stored in an array of size 20 and
+the result is then written to the screen. If the result of the addition is an integer with
+more than the maximum number of digits (that is, more than 20 digits), then your
+program should issue a message saying that it has encountered “integer overflow.”
+You should be able to change the maximum length of the integers by changing
+only one globally defined constant. Include a loop that allows the user to continue
+to do more additions until the user says the program should end.
+
+6. In the sport of diving, seven judges award a score between 0 and 10, where each
+score may be a floating-point value. The highest and lowest scores are thrown
+out and the remaining scores are added together. The sum is then multiplied by
+the degree of difficulty for that dive. The degree of difficulty ranges from 1.2 to
+3.8 points. The total is then multiplied by 0.6 to determine the diver’s score.
+Write a computer program that inputs a degree of difficulty and seven judges’
+scores, and outputs the overall score for that dive. The program should ensure that
+all inputs are within the allowable data ranges.
+
+7. Generate a text-based histogram for a quiz given to a class of students. The quiz is
+graded on a scale from 0 to 5. Write a program that allows the user to enter grades
+for each student. As the grades are being entered, the program should count, using
+an array, the number of 0’s, the number of 1’s, the number of 2’s, the number of
+3’s, the number of 4’s, and the number of 5’s. The program should be capable of
+handling an arbitrary number of student grades.
+You can do this by making an array of size 6, where each array element is initialized
+to zero. Whenever a zero is entered, increment the value in the array at index 0.
+Whenever a one is entered, increment the value in the array at index 1, and so on,
+up to index 5 of the array.
+Output the histogram count at the end. For example, if the input grades are 3, 0,
+1, 3, 3, 5, 5, 4, 5, 4, then the program should output
+1 grade(s) of 0
+1 grade(s) of 1
+0 grade(s) of 2
+3 grade(s) of 3
+2 grade(s) of 4
+3 grade(s) of 5
+
+8. The birthday paradox is that there is a surprisingly high probability that two people
+in the same room happen to share the same birthday. By birthday, we mean the same
+day of the year (ignoring leap years), but not the exact birthday including the birth
+year or time of day. Write a program that approximates the probability that two
+people in the same room have the same birthday, for 2 to 50 people in the room.
+The program should use simulation to approximate the answer. Over many trials
+(say, 5000), randomly assign birthdays to everyone in the room. Count up the
+number of times at least two people have the same birthday, and then divide by
+the number of trials to get an estimated probability that two people share the same
+birthday for a given room size.
+Your output should look something like the following. It will not be exactly the
+same due to the random numbers:
+For 2 people, the probability of two birthdays is about 0.002
+For 3 people, the probability of two birthdays is about 0.0082
+For 4 people, the probability of two birthdays is about 0.0163
+. . .
+For 49 people, the probability of two birthdays is about 0.9654
+For 50 people, the probability of two birthdays is about 0.969
+
+9. Write a program that will allow two users to play tic-tac-toe. The program should
+ask for moves alternately from player X and player O. The program displays the
+game positions as follows:
+1 2 3
+4 5 6
+7 8 9
+The players enter their moves by entering the position number they wish to mark.
+After each move, the program displays the changed board. A sample board configuration
+is as follows:
+X X O
+4 5 6
+O 8 9
+
+10. Write a program to assign passengers seats in an airplane. Assume a small airplane
+with seat numbering as follows:
+1 A B C D
+2 A B C D
+3 A B C D
+4 A B C D
+5 A B C D
+6 A B C D
+7 A B C D
+The program should display the seat pattern, with an 'X' marking the seats already
+assigned. For example, after seats 1A, 2B, and 4C are taken, the display should look
+like this:
+1 X B C D
+2 A X C D
+3 A B C D
+4 A B X D
+5 A B C D
+6 A B C D
+7 A B C D
+After displaying the seats available, the program prompts for the seat desired, the
+user types in a seat, and then the display of available seats is updated. This continues
+until all seats are filled or until the user signals that the program should end.
+If the user types in a seat that is already assigned, the program should say that that
+seat is occupied and ask for another choice.
+
+11. Write a program that accepts input like the program in Display 5.4 and that
+outputs a bar graph like the one in that program, except that your program will
+output the bars vertically rather than horizontally. A two-dimensional array may
+be useful.
+
+12. The mathematician John Horton Conway invented the “Game of Life.” Though
+not a “game” in any traditional sense, it provides interesting behavior that is
+specified with only a few rules. This project asks you to write a program that
+allows you to specify an initial configuration. The program follows the rules of
+Life (listed shortly) to show the continuing behavior of the configuration.
+LIFE is an organism that lives in a discrete, two-dimensional world. While this
+world is actually unlimited, we do not have that luxury, so we restrict the array to
+80 characters wide by 22 character positions high. If you have access to a larger
+screen, by all means use it.
+This world is an array with each cell capable of holding one LIFE cell. Generations
+mark the passing of time. Each generation brings births and deaths to the LIFE
+community. The births and deaths follow this set of rules:
+1. We define each cell to have eight neighbor cells. The neighbors of a cell are the
+cells directly above, below, to the right, to the left, diagonally above to the right
+and left, and diagonally below, to the right and left.
+2. If an occupied cell has zero or one neighbor, it dies of loneliness. If an occupied
+cell has more than three neighbors, it dies of overcrowding.
+3. If an empty cell has exactly three occupied neighbor cells, there is a birth of a
+new cell to replace the empty cell.
+4. Births and deaths are instantaneous and occur at the changes of generation.
+A cell dying for whatever reason may help cause birth, but a newborn cell cannot
+resurrect a cell that is dying, nor will a cell’s death prevent the death of another,
+say, by reducing the local population.
+*
+Examples: *** becomes * then becomes *** again, and so on.
+*
+Notes: Some configurations grow from relatively small starting configurations.
+Others move across the region. It is recommended that for text output you use
+a rectangular char array with 80 columns and 22 rows to store the LIFE world’s
+successive generations. Use an * to indicate a living cell and use a blank to indicate
+an empty (or dead) cell. If you have a screen with more rows than that, by all means
+make use of the whole screen.
+Suggestions: Look for stable configurations. That is, look for communities that
+repeat patterns continually. The number of configurations in the repetition is
+called the period. There are configurations that are fixed, that is, that continue
+without change. A possible project is to find such configurations.
+Hints: Define a void function named generation that takes the array we call
+world , an 80-column by 22-row array of type char , which contains the initial
+configuration. The function scans the array and modifies the cells, marking the
+cells with births and deaths in accord with the rules listed previously. This involves
+examining each cell in turn and either killing the cell, letting it live, or, if the cell
+is empty, deciding whether a cell should be born. There should be a function
+display that accepts the array world and displays the array on the screen. Some
+sort of time delay is appropriate between calls to generation and display . To
+do this, your program should generate and display the next generation when you
+press Return. You are at liberty to automate this, but automation is not necessary
+for the program.
+
+13. A common memory matching game played by young children is to start with a
+deck of cards that contains identical pairs. For example, given six cards in the deck,
+two might be labeled “1”, two might be labeled “2”, and two might be labeled “3”.
+The cards are shuffled and placed facedown on the table. The player then selects
+two cards that are facedown, turns them faceup, and if they match they are left
+faceup. If the two cards do not match, they are returned to their original position
+facedown. The game continues in this fashion until all cards are faceup.
+Write a program that plays the memory matching game. Use 16 cards that are
+laid out in a 4 * 4 square and are labeled with pairs of numbers from 1 to 8. Your
+program should allow the player to specify the cards through a coordinate system.
+For example, in the following layout
+1 2 3 4
+1 8 * * *
+2 * * * *
+3 * 8 * *
+4 * * * *
+all of the cards are facedown except for the pair of 8’s, which has been located at
+coordinates (1,1) and (2,3). To hide the cards that have been temporarily placed
+faceup, output a large number of newlines that force the old board off the screen.
+Hint: Use a 2D array for the arrangement of cards and another 2D array that indicates
+whether a card is faceup or facedown. Write a function that “shuffles” the cards in the
+array by repeatedly selecting two cards at random and swapping them.
+
+14. You have collected reviews from four movie reviewers where the reviewers are
+numbered 0–3. Each reviewer has rated six movies where the movies are numbered
+100–105. The ratings range from 1 (terrible) to 5 (excellent).
+The reviews are shown in the following table:
+100 101 102 103 104 105
+0 3 1 5 2 1 5
+1 4 2 1 4 2 4
+2 3 1 2 4 4 1
+3 5 1 4 2 4 2
+Write a program that stores this data using a 2D array. Based on this information
+your program should allow the user to enter ratings for any three movies. The
+program should then find the reviewer whose ratings most closely match the ratings
+input by the user. It should then predict the user’s interest in the other movies by
+outputting the ratings by the reviewer for the movies that were not rated by the
+user. Use the Cartesian distance as the metric to determine how close the reviewer’s
+movie ratings are to the ratings input by the user. This technique is a simple version
+of the nearest neighbor classification algorithm.
+For example, if the user inputs a rating of 5 for movie 102, 2 for movie 104, and
+5 for movie 105, then the closest match is reviewer 0 with a distance of sqrt
+((5 - 5) 2 + (2 - 1) 2 + (5 - 5) 2 ) = 1. The program would then predict a rating of
+3 for movie 100, a rating of 1 for movie 101, and a rating of 2 for movie 103.
+
+15. Traditional password entry schemes are susceptible to “shoulder surfing” in which
+an attacker watches an unsuspecting user enter their password or PIN number and
+uses it later to gain access to the account. One way to combat this problem is with
+a randomized challenge-response system. In these systems, the user enters different
+information every time based on a secret in response to a randomly generated
+challenge. Consider the following scheme in which the password consists of a five-digit
+PIN number (00000 to 99999). Each digit is assigned a random number that is
+1, 2, or 3. The user enters the random numbers that correspond to their PIN
+instead of their actual PIN numbers.
+For example, consider an actual PIN number of 12345. To authenticate, the user
+would be presented with a screen such as
+PIN: 0 1 2 3 4 5 6 7 8 9
+NUM: 3 2 3 1 1 3 2 2 1 3
+The user would enter 23113 instead of 12345. This does not divulge the password
+even if an attacker intercepts the entry because 23113 could correspond to other
+PIN numbers, such as 69440 or 70439. The next time the user logs in, a different
+sequence of random numbers would be generated, such as
+PIN: 0 1 2 3 4 5 6 7 8 9
+NUM: 1 1 2 3 1 2 2 3 3 3
+Your program should simulate the authentication process. Store an actual PIN
+number in your program. The program should use an array to assign random
+numbers to the digits from 0 to 9. Output the random digits to the screen, input
+the response from the user, and output whether or not the user’s response correctly
+matches the PIN number.
+
+16. Do Programming Project 5.14 except instead of only four reviewers allow for up
+to 1000 reviewers and store the reviews in a text file. While your program should
+support up to 1000 reviewers, the actual number of reviewers stored in the file
+could vary from 1 to 1000. The only movies that are reviewed are numbered from
+100 to 105 as in Programming Project 14. You are welcome to design the format
+used to store the reviews in the text file. After the reviews are read from the text file
+the program should input three movies and make predictions for the remaining
+two movies as in Programming Project 5.14.
+
+17. Programming Project 2.12 asked you to explore Benford’s Law. An easier way to
+write the program is to use an array to store the digit counts. That is, count[0]
+might store the number of times 0 is the first digit (if that is possible in your data
+set), count[1] might store the number of times 1 is the first digit, and so forth.
+Redo Programming Project 2.12 using arrays.
+
+18. This project is an extension of Programming Project 4.16 . Consider a text file
+named scores.txt that contains player scores for a game. A possible sample is
+shown next where Ronaldo’s best score is 10400, Didier’s best score is 9800, etc.
+Put at least five names and scores in the file.
+Ronaldo
+10400
+Didier
+9800
+Pele
+12300
+Kaka
+8400
+Cristiano
+8000
+Write a function named getHighScores that takes two array parameters, an array
+of strings and an array of integers. The function should scan through the file and
+set the string array entry at index 0 to the name of the player with the highest score
+and set the integer array entry at index 0 to the score of the player with the highest
+score. The string array entry at index 1 should be set to the name of the player with
+the second highest score and the integer array entry at index 1 should be set to the
+score of the player with the second highest score. Do the same for the entries at
+index 2. Together, these two arrays give you the names and scores of the top three
+players. In your main function, test the getHighScores function by calling it and
+outputting the top three players and scores.
+might store the number of times 0 is the first digit (if that is possible in your data
+set), count[1] might store the number of times 1 is the first digit, and so forth.
+Redo Programming Project 2.12 using arrays.
