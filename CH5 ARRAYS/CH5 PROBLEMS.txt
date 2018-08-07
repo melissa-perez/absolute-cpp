@@ -351,6 +351,3 @@ score of the player with the second highest score. Do the same for the entries a
 index 2. Together, these two arrays give you the names and scores of the top three
 players. In your main function, test the getHighScores function by calling it and
 outputting the top three players and scores.
-might store the number of times 0 is the first digit (if that is possible in your data
-set), count[1] might store the number of times 1 is the first digit, and so forth.
-Redo Programming Project 2.12 using arrays.
