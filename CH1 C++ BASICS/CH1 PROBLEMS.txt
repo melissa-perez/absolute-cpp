@@ -1,0 +1,107 @@
+1. A metric ton is 35,273.92 ounces. Write a program that will read the weight of a
+package of breakfast cereal in ounces and output the weight in metric tons as well
+as the number of boxes needed to yield one metric ton of cereal.
+
+2. A government research lab has concluded that an artificial sweetener commonly
+used in diet soda will cause death in laboratory mice. A friend of yours is desperate
+to lose weight but cannot give up soda. Your friend wants to know how much diet
+soda it is possible to drink without dying as a result. Write a program to supply
+the answer. The input to the program is the amount of artificial sweetener needed
+to kill a mouse, the weight of the mouse, and the weight of the dieter. To ensure
+the safety of your friend, be sure the program requests the weight at which the
+dieter will stop dieting, rather than the dieter’s current weight. Assume that diet
+soda contains one-tenth of 1% artificial sweetener. Use a variable declaration with
+the modifier const to give a name to this fraction. You may want to express the
+percentage as the double value 0.001 .
+
+3. Workers at a particular company have won a 7.6% pay increase retroactive for six
+months. Write a program that takes an employee’s previous annual salary as input
+and outputs the amount of retroactive pay due the employee, the new annual
+salary, and the new monthly salary. Use a variable declaration with the modifier
+const to express the pay increase.
+
+4. Negotiating a consumer loan is not always straightforward. One form of loan is the
+discount installment loan, which works as follows. Suppose a loan has a face value
+of $1,000, the interest rate is 15%, and the duration is 18 months. The interest is
+computed by multiplying the face value of $1,000 by 0.15, yielding $150. That
+figure is then multiplied by the loan period of 1.5 years to yield $225 as the total
+interest owed. That amount is immediately deducted from the face value, leaving
+the consumer with only $775. Repayment is made in equal monthly installments
+based on the face value. So the monthly loan payment will be $1,000 divided
+by 18, which is $55.56. This method of calculation may not be too bad if the
+consumer needs $775 dollars, but the calculation is a bit more complicated if the
+consumer needs $1,000. Write a program that will take three inputs: the amount
+the consumer needs to receive, the interest rate, and the duration of the loan in
+months. The program should then calculate the face value required in order for
+the consumer to receive the amount needed. It should also calculate the monthly
+payment.
+
+5. Write a program that determines whether a meeting room is in violation of fire law
+regulations regarding the maximum room capacity. The program will read in the
+maximum room capacity and the number of people to attend the meeting. If the
+number of people is less than or equal to the maximum room capacity, the program
+announces that it is legal to hold the meeting and tells how many additional people
+may legally attend. If the number of people exceeds the maximum room capacity,
+the program announces that the meeting cannot be held as planned due to fire
+regulations and tells how many people must be excluded in order to meet the fire
+regulations.
+
+6. An employee is paid at a rate of $16.78 per hour for regular hours worked in a
+week. Any hours over that are paid at the overtime rate of one and one-half times
+that. From the worker’s gross pay, 6% is withheld for Social Security tax, 14% is
+withheld for federal income tax, 5% is withheld for state income tax, and $10 per
+week is withheld for union dues. If the worker has three or more dependents, then
+an additional $35 is withheld to cover the extra cost of health insurance beyond
+what the employer pays. Write a program that will read in the number of hours
+worked in a week and the number of dependents as input and that will then output
+the worker’s gross pay, each withholding amount, and the net take-home pay for
+the week.
+
+7. One way to measure the amount of energy that is expended during exercise is to
+use metabolic equivalents (MET). Here are some METS for various activities:
+Running 6 MPH: 10 METS
+Basketball: 8 METS
+Sleeping: 1 MET
+The number of calories burned per minute may be estimated using the formula
+Calories/Minute = 0.0175 × 1 MET × (Weight in kilograms)
+Write a program that inputs a subject’s weight in pounds, the number of METS
+for an activity, and the number of minutes spent on that activity, and then outputs
+an estimate for the total number of calories burned. One kilogram is equal
+to 2.2 pounds.
+
+8. The Babylonian algorithm to compute the square root of a positive number n is as
+follows:
+1. Make a guess at the answer (you can pick n/2 as your initial guess).
+2. Compute r = n / guess .
+3. Set guess = (guess + r) / 2 .
+4. Go back to step 2 for as many iterations as necessary. The more steps 2 and 3
+are repeated, the closer guess will become to the square root of n .
+Write a program that inputs a double for n , iterates through the Babylonian algorithm
+five times, and outputs the answer as a double to two decimal places. Your
+answer will be most accurate for small values of n .
+9. The video game machines at your local arcade output coupons depending on how
+well you play the game. You can redeem 10 coupons for a candy bar or 3 coupons
+for a gumball. You prefer candy bars to gumballs. Write a program that inputs the
+number of coupons you win and outputs how many candy bars and gumballs you
+can get if you spend all of your coupons on candy bars first and any remaining
+coupons on gumballs.
+
+10. Write a program that allows the user to enter a time in seconds and then outputs
+how far an object would drop if it is in freefall for that length of time. Assume no
+friction or resistance from air and a constant acceleration of 32 feet per second due
+to gravity. Use the equation
+Distance = 12
+* acceleration * time2
+
+11. Write a program that inputs an integer that represents a length of time in seconds.
+The program should then output the number of hours, minutes, and seconds that
+corresponds to that number of seconds. For example, if the user inputs 50391 total
+seconds then the program should output 13 hours, 59 minutes, and 51 seconds.
+
+12. A simple rule to estimate your ideal body weight is to allow 110 pounds for the first 5
+feet of height and 5 pounds for each additional inch. Write a program with a variable
+for the height of a person in feet and another variable for the additional inches and
+input values for these variables from the keyboard. Assume the person is at least 5 feet
+tall. For example, a person that is 6 feet and 3 inches tall would be represented with
+a variable that stores the number 6 and another variable that stores the number 3.
+Based on these values calculate and output the ideal body weight.
