@@ -81,6 +81,9 @@ void inputPoints(double pointsEntered[MAX][2])
         i+=1;
     }
 }
+
+
+//Sets the private data of the created object.
 void Point::set(double newx,double newy)
 {
    x=newx;
