@@ -8,10 +8,11 @@ using namespace std;
 
 class GasPump{
 public:
-    void displayGallons();
+    void pumpGallons();
     void displayAmount();
     void setGallons();
     void displayCPG();
+    void displayGallons();
 
 private:
     double amountCharged=0.00;
@@ -29,10 +30,13 @@ int main(int argc, char *argv[])
         cout.precision(2);
         GasPump pump;
         pump.setGallons();
+        pump.pumpGallons();
         pump.displayGallons();
         pump.displayAmount();
         cout<<"\nComputer another purchase?(Enter Y or y): ";
         cin>>ans;
+        system("cls");
+
     }while(ans=='y'||ans=='Y');
     cout<<"\nEND OF PROGRAM."<<endl;
     return 0;
@@ -54,7 +58,7 @@ void GasPump::displayCPG()
     cout<<"\nThe cost per gallon is $"<<COST_PER_GALLON<<endl;
 }
 
-void GasPump::displayGallons()
+void GasPump::pumpGallons()
 {
     char c ;
     double i=0.00;
@@ -63,15 +67,27 @@ void GasPump::displayGallons()
         cout<<"Hold the enter button to pump gas, press ESC to stop. "<<endl;
         displayCPG();
         displayAmount();
+        displayGallons();
+        i+=0.01;
+
         cout<<"Gas pumping....\n";
-        gallons=i;
-        cout<<i<<" gallons"<<endl;
         Sleep(40);
 
         c=getch();
-        if (c==27)break;
         system("cls");
-        i+=0.01;
+
+        if (c==27)break;
+        gallons=i;
+
 
     }
+
+    system("cls");
+
+}
+
+void GasPump::displayGallons()
+{
+    cout<<gallons<<" gallons"<<endl;
+
 }
