@@ -1,0 +1,148 @@
+1. Write a grading program for a class with the following grading policies:
+a. There are two quizzes, each graded on the basis of 10 points.
+b. There is one midterm exam and one final exam, each graded on the basis of
+100 points.
+c. The final exam counts for 50% of the grade, the midterm counts for 25%, and
+the two quizzes together count for a total of 25%. (Do not forget to normalize
+the quiz scores. They should be converted to a percentage before they are averaged
+in.)
+Any grade of 90 or more is an A, any grade of 80 or more (but less than 90) is a
+B, any grade of 70 or more (but less than 80) is a C, any grade of 60 or more (but
+less than 70) is a D, and any grade below 60 is an F. The program will read in the
+student’s scores and output the student’s record, which consists of two quiz and
+two exam scores as well as the student’s average numeric score for the entire course
+and final letter grade. Define and use a structure for the student record.
+
+2. Define a class for a type called CounterType . An object of this type is used to
+count things, so it records a count that is a nonnegative whole number. Include a
+mutator function that sets the counter to a count given as an argument. Include
+member functions to increase the count by one and to decrease the count by one.
+Be sure that no member function allows the value of the counter to become negative.
+Also, include a member function that returns the current count value and one
+that outputs the count. Embed your class definition in a test program.
+
+3. The type Point is a fairly simple data type, but under another name (the template
+class pair ) this data type is defined and used in the C++ Standard Template Library,
+although you need not know anything about the Standard Template Library to do
+this exercise. Write a definition of a class named Point that might be used to store
+and manipulate the location of a point in the plane. You will need to declare and
+implement the following member functions:
+a. A member function set that sets the private data after an object of this class
+is created.
+b. A member function to move the point by an amount along the vertical and
+horizontal directions specified by the first and second arguments.
+c A member function to rotate the point by 90 degrees clockwise around the origin.
+d. Two const inspector functions to retrieve the current coordinates of the point.
+Document these functions with appropriate comments. Embed your class in a test
+program that requests data for several points from the user, creates the points, then
+exercises the member functions.
+
+4. Write the definition for a class named GasPump to be used to model a pump at an
+automobile service station. Before you go further with this programming exercise,
+write down the behavior you expect from a gas pump from the point of view of the
+purchaser.
+The following are listed things a gas pump might be expected to do. If your list
+differs, and you think your list is as good or better than these, then consult your
+instructor. You and your instructor should jointly decide what behavior you are to
+implement. Then implement and test the agreed upon design for a gas pump class.
+a. A display of the amount dispensed
+b. A display of the amount charged for the amount dispensed
+c. A display of the cost per gallon, liter, or other unit of volume that is used where
+you reside
+d. Before use, the gas pump must reset the amount dispensed and amount charged
+to zero.
+e. Once started, a gas pump continues to dispense fuel, keep track of the amount
+dispensed, and compute the charge for the amount dispensed until stopped.
+f. A stop dispensing control of some kind is needed.
+Implement the behavior of the gas pump as declarations of member functions of
+the gas pump class, then write implementations of these member functions. You
+will have to decide if there is data the gas pump has to keep track of that the user
+of the pump should not have access to. If so, make these private member variables.
+
+5. Define a class for a type called Fraction . This class is used to represent a ratio
+of two integers. Include mutator functions that allow the user to set the numerator
+and the denominator. Also include a member function that returns the value
+of the numerator divided by the denominator as a double. Include an additional
+member function that outputs the value of the fraction reduced to lowest terms.
+For example, instead of outputting 20/60 the function should output 1/3. This will
+require finding the greatest common divisor for the numerator and denominator,
+and then dividing both by that number. Embed your class in a test program.
+
+6. Define a class called Odometer that will track fuel and mileage for an automotive
+vehicle. The class should have member variables to track the miles driven and the
+fuel efficiency of the vehicle in miles per gallon. Include a mutator function to reset
+the odometer to zero miles, a mutator function to set the fuel efficiency, a mutator
+function that accepts miles driven for a trip and adds it to the odometer’s total, and
+an accessor function that returns the number of gallons of gasoline that the vehicle
+has consumed since the odometer was last reset.
+Use your class with a test program that creates several trips with different fuel
+efficiencies. You should decide which variables should be public, if any.
+
+7. Define a class called Pizza that has member variables to track the type of pizza
+(either deep dish, hand tossed, or pan) along with the size (either small, medium,
+or large) and the number of pepperoni or cheese toppings. You can use constants to
+represent the type and size. Include mutator and accessor functions for your class.
+Create a void function, outputDescription( ) , that outputs a textual description
+of the pizza object. Also include a function, computePrice( ) , that computes the
+cost of the pizza and returns it as a double according to the following rules:
+Small pizza = $10 + $2 per topping
+Medium pizza = $14 + $2 per topping
+Large pizza = $17 + $2 per topping
+Write a suitable test program that creates and outputs a description and price of
+various pizza objects.
+8. Define a class named Money that stores a monetary amount. The class should have
+two private integer variables, one to store the number of dollars and another to
+store the number of cents. Add accessor and mutator functions to read and set both
+member variables. Add another function that returns the monetary amount as a
+double. Write a program that tests all of your functions with at least two different
+Money objects.
+
+9. Do Programming Project 6.8 , except remove the two private integer variables and
+use a single variable of type double to store the monetary value in their place. The
+rest of the functions should have the same headers. For several functions, this will
+require code to convert from an integer format to appropriately modify the double.
+For example, if the monetary amount stored in the double is 4.55 (representing
+$4.55) and if the function to set the dollar amount is invoked with the value 13,
+then the double should be changed to 13.55. While this will take some work, the
+code in your test program from Programming Project 6.8 should still work without
+requiring any changes. This is the benefit of encapsulating the member variables.
+
+10. Create a Temperature class that internally stores a temperature in degrees
+Kelvin. Create functions named setTempKelvin , setTempFahrenheit , and
+setTempCelsius that take an input temperature in the specified temperature
+scale, convert the temperature to Kelvin, and store that temperature in the
+class member variable. Also, create functions that return the stored temperature
+in degrees Kelvin, Fahrenheit, or Celsius. Write a main function to test your class.
+Use the equations shown next to convert between the three temperature scales.
+Kelvin = Celsius + 273.15
+Celsius = (5.0/9) * (Fahrenheit - 32)
+
+11. Do Programming Project 5.18 except use only one array as a parameter instead
+of two arrays . The single array should be of type Player where Player is a class
+that you create. The Player class should have a member variable of type string
+to store the player’s name and a member variable of type int to score the player’s
+score. Encapsulate these variables appropriately. Upon return from your function
+the array entry at index 0 should be set to the name and score of the player with the
+best score, the entry at index 1 should be set to the name and score of the player
+with the second best score, etc.
+
+12. Your Community Supported Agriculture (CSA) farm delivers a box of fresh fruits
+and vegetables to your house once a week. For this Programming Project, define the
+class BoxOfProduce that contains exactly three bundles of fruits or vegetables. You
+can represent the fruits or vegetables as an array of type string . Add accessor and
+mutator functions to get or set the fruits or vegetables stored in the array. Also write
+an output function that displays the complete contents of the box on the console.
+Next, write a main function that creates a BoxOfProduce with three items
+randomly selected from this list:
+Broccoli
+Tomato
+Kiwi
+Kale
+Tomatillo
+This list should be stored in a text file that is read in by your program. For now
+you can assume that the list contains exactly five types of fruits or vegetables.
+Do not worry if your program randomly selects duplicate produce for the three
+items. Next, the main function should display the contents of the box and allow
+the user to substitute any one of the five possible fruits or vegetables for any of the
+fruits or vegetables selected for the box. After the user is done with substitutions
+output the final contents of the box to be delivered.
