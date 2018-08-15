@@ -13,8 +13,8 @@ public:
     double moneyAmount();
     void displayMoney();
 private:
-    int dollars, cents;
-    double totalMoney;
+    int dollars=0, cents=0;
+    double totalMoney=0;
 };
 
 int main(int argc, char *argv[])
