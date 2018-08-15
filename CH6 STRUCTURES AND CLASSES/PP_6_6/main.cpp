@@ -13,7 +13,7 @@ public:
     void gallonsUsed();
     void outputGallons();
 private:
-    double miles, fuelEfficiency,gallons;
+    double miles=0, fuelEfficiency=1,gallons=0;
 };
 
 int main(int argc, char *argv[])
