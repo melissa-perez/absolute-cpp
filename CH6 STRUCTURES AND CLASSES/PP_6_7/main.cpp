@@ -25,8 +25,8 @@ public:
 
 
 private:
-    char type, size;
-    double price;
+    char type='d', size='s';
+    double price=0;
     const double PRICE_TOPPING=2.00;
     int pepTops=0,cheeseTops=0;
 
