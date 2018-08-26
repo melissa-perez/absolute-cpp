@@ -1,0 +1,168 @@
+1. Define a class called Month that is an abstract data type for a month. Your class will
+have one member variable of type int to represent a month (1 for January, 2 for
+February, and so forth). Include all the following member functions: a constructor
+to set the month using the first three letters in the name of the month as three
+arguments, a constructor to set the month using an integer as an argument (1 for
+January, 2 for February, and so forth), a default constructor, an input function that
+reads the month as an integer, an input function that reads the month as the first
+three letters in the name of the month, an output function that outputs the month
+as an integer, an output function that outputs the month as the first three letters
+in the name of the month, and a member function that returns the next month as
+a value of type Month . Embed your class definition in a test program.
+
+2. Redefine the implementation of the class Month described in Programming
+P roject 7.1 (or do the definition for the first time, but do the implementation as
+described here). This time the month is implemented as three member variables of
+type char that store the first three letters in the name of the month. Embed your
+definition in a test program.
+
+3. My mother always took a little red counter to the grocery store. The counter was
+used to keep tally of the amount of money she would have spent so far on that visit
+to the store if she bought everything in the basket. The counter had a four-digit
+display, increment buttons for each digit, and a reset button. An overflow indicator
+came up red if more money was entered than the $99.99 it would register. (This
+was a long time ago.)
+Write and implement the member functions of a class Counter that simulates and
+slightly generalizes the behavior of this grocery store counter. The constructor should
+create a Counter object that can count up to the constructor’s argument. That is,
+Counter(9999) should provide a counter that can count up to 9999 . A newly constructed
+counter displays a reading of 0 . The member function void reset( );
+sets the counter’s number to 0 . The member function void incr1( ); increments
+the units digits by 1 , void incr10( ); increments the tens digit by 1 , and void
+incr100( ); and void incr1000( ); increment the next two digits, respectively.
+Accounting for any carrying when you increment should require no further action than
+adding an appropriate number to the private data member. A member function bool
+overflow( ); detects overflow. (Overflow is the result of incrementing the counter’s
+private data member beyond the maximum entered at counter construction.)
+Use this class to provide a simulation of my mother’s little red clicker. Even though the
+display is an integer, in the simulation, the rightmost (lower order) two digits are always
+thought of as cents and tens of cents, the next digit is dollars, and the fourth digit is tens
+of dollars.
+Provide keys for cents, dimes, dollars, and tens of dollars. Unfortunately, no choice of
+keys seems particularly mnemonic. One choice is to use the keys asdfo: a for cents,
+followed by a digit 1 to 9 ; s for dimes, followed by a digit 1 to 9 ; d for dollars, followed
+by a digit 1 to 9 ; and f for tens of dollars, again followed by a digit 1 to 9 . Each entry
+(one of asdf followed by 1 to 9) is followed by pressing the Return key. Any overflow
+is reported after each operation. Overflow can be requested by pressing the o key.
+
+4 . You operate several hot dog stands distributed throughout town. Define a class named
+HotDogStand that has a member variable for the hot dog stand’s ID number and a
+member variable for how many hot dogs the stand sold that day. Create a constructor
+that allows a user of the class to initialize both values.
+Also create a function named JustSold that increments the number of hot dogs
+the stand has sold by one. This function will be invoked each time the stand sells a
+hot dog so that you can track the total number of hot dogs sold by the stand. Add
+another function that returns the number of hot dogs sold.
+Finally, add a static variable that tracks the total number of hot dogs sold by all
+hot dog stands and a static function that returns the value in this variable. Write
+a main function to test your class with at least three hot dog stands that each sell a
+variety of hot dogs.
+
+
+5. In an ancient land, the beautiful princess Eve had many suitors. She decided on
+the following procedure to determine which suitor she would marry. First, all of
+the suitors would be lined up one after the other and assigned numbers. The first
+suitor would be number 1, the second number 2, and so on up to the last suitor,
+number n. Starting at the first suitor she would then count three suitors down
+the line (because of the three letters in her name) and the third suitor would be
+eliminated from winning her hand and removed from the line. Eve would then
+continue, counting three more suitors, and eliminating every third suitor. When
+she reached the end of the line she would continue counting from the beginning.
+For example, if there were six suitors then the elimination process would proceed
+as follows:
+123456 initial list of suitors, start counting from 1
+12456 suitor 3 eliminated, continue counting from 4
+1245 suitor 6 eliminated, continue counting from 1
+125 suitor 4 eliminated, continue counting from 5
+15 suitor 2 eliminated, continue counting from 5
+1 suitor 5 eliminated, 1 is the lucky winner
+Write a program that uses a vector to determine which position you should stand
+in to marry the princess if there are n suitors. You will find the following function
+from the Vector class useful:
+v.erase(iter);
+// Removes element at position iter
+For example, to use this function to erase the fourth element from the beginning
+of a vector variable named theVector , use
+theVector.erase(theVector.begin( ) + 3);
+
+The number 3 is used because the first element in the vector is at index position 0.
+6. This Programming Project requires you to first complete Programming
+Project 6.7 from Chapter 6 , which is an implementation of a Pizza class. Add
+an Order class that contains a private vector of type Pizza . This class represents
+a customer’s entire order, where the order may consist of multiple pizzas. Include
+appropriate functions so that a user of the Order class can add pizzas to the order
+(type is deep dish, hand tossed, or pan; size is small, medium, or large; number
+of pepperoni or cheese toppings). You can use constants to represent the type and
+size. Also write a function that outputs everything in the order along with the total
+price. Write a suitable test program that adds multiple pizzas to an order(s).
+
+7. Do Programming Project 6.8 , the definition of a Money class, except create a
+default constructor that sets the monetary amount to 0 dollars and 0 cents, and
+create a second constructor with input parameters for the amount of the dollars
+and cents variables. Modify your test code to invoke the constructors.
+
+8. Write a program that outputs a histogram of grades for an assignment given to
+a class of students. The program should input each student’s grade as an integer
+and store the grade in a vector. Grades should be entered until the user enters -1
+for a grade. The program should then scan through the vector and compute the
+histogram. In computing the histogram, the minimum value of a grade is 0, but
+your program should determine the maximum value entered by the user. Output
+the histogram to the console. See Programming Project 5.7 for information on how
+to compute a histogram.
+
+9. Prior to 2009 the bar code on an envelope used by the U.S. Postal Service represented
+a five (or more) digit zip code using a format called POSTNET. The bar
+code consists of long and short bars as shown here:
+For this program, we will represent the bar code as a string of digits. The digit 1
+represents a long bar, and the digit 0 represents a short bar. Therefore, the bar code
+shown would be represented in our program as follows:
+110100101000101011000010011
+The first and last digits of the bar code are always 1. Removing these leave 25 digits.
+If these 25 digits are split into groups of five digits each then we have the following:
+10100 10100 01010 11000 01001
+Next, consider each group of five digits. There always will be exactly two 1’s in
+each group of digits. Each digit stands for a number. From left to right, the digits
+encode the values 7, 4, 2, 1, and 0. Multiply the corresponding value with the digit
+and compute the sum to get the final encoded digit for the zip code. The following
+table shows the encoding for 10100.
+Bar Code Digits 1 0 1 0 0
+Value 7 4 2 1 0
+Product of
+Digit * Value
+7 0 2 0 0
+Zip Code Digit = 7 + 0 + 2 + 0 + 0 = 9
+
+Repeat this for each group of five digits and concatenate to get the complete zip
+code. There is one special value. If the sum of a group of five digits is 11, then this
+represents the digit 0 (this is necessary because with two digits per group it is not
+possible to represent zero). The zip code for the sample bar code decodes to 99504.
+While the POSTNET scheme may seem unnecessarily complex, its design allows
+machines to detect if errors have been made in scanning the zip code.
+Write a zip code class that encodes and decodes five-digit bar codes used by the
+U.S. Postal Service on envelopes. The class should have two constructors. The first
+constructor should input the zip code as an integer, and the second constructor
+should input the zip code as a bar code string consisting of 0’s and 1’s as described
+above. Although you have two ways to input the zip code, internally, the class
+should only store the zip code using one format. (You may choose to store it as a
+bar code string or as a zip code number.) The class also should have at least two
+public member functions: one to return the zip code as an integer and the other
+to return the zip code in bar code format as a string. All helper functions should be
+declared private. Embed your class definition in a suitable test program.
+
+10. First, complete Programming Project 6.12 . Modify the main function with a loop
+so that the user determines how many BoxOfProduce objects are created. Each box
+should contain three bundles of fruits or vegetables selected randomly from this
+list: tomatillo, broccoli, tomato, kiwi, and kale. Add a menu so the user can decide
+when to stop creating boxes. The menu should allow the user to make substitutions
+for the randomly selected items in a box.
+You would like to throw in a free recipe flyer for salsa verde if the box contains
+tomatillos. However, there are only 5 recipe flyers. Add a static member variable
+to the BoxOfProduce class that counts the number of recipe flyers remaining and
+initialize it to 5. Also add a member variable that indicates whether or not the box
+contains a recipe flyer and modify the output function to also print “salsa verde
+recipe” if the box contains a recipe flyer. Finally, add logic inside the class so that if
+the box contains at least one order of tomatillos then it automatically gets a recipe
+flyer until all of the recipe flyers are gone. Note that a box should only get one
+recipe flyer even if there are multiple orders of tomatillos.
+Test your class by creating boxes with tomatillos from your menu until all of the
+flyers are gone.
