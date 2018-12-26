@@ -76,6 +76,8 @@ int main(){
     }
  cout << endl << "63 % of " << yourAmount << " is " << yourAmount.percent(63) << endl;
  cout << endl << "20 % of " << myAmount << " is " << myAmount.percent(20) << endl;
+ cout << endl << "10 % of " << yourAmount << " is " << yourAmount.percent(10) << endl;
+
     return 0;
 }
 Money::Money() : dollars(0), cents(0) {}
