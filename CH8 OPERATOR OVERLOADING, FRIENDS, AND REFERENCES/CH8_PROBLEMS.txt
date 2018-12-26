@@ -1,0 +1,130 @@
+1. Modify the definition of the class Money shown in Display 8.5 so that the following
+are added:
+a. The operators < , <=, > , and >= have each been overloaded to apply to the type
+Money . ( Hint: See Self-Test Exercise 8 .)
+
+b. The following member function has been added to the class definition. (We
+show the function declaration as it should appear in the class definition. The
+definition of the function itself will include the qualifier Money ::.)
+const Money percent( int percentFigure) const;
+//Returns a percentage of the money amount in the calling
+//object. For example, if percentFigure is 10, then the value
+//returned is 10% of the amount of money represented by the
+//calling object.
+For example, if purse is an object of type Money whose value represents the
+amount $100.10, then the call
+purse.percent(10);
+returns 10% of $100.10; that is, it returns a value of type Money that represents
+the amount $10.01.
+
+2. Define a class for rational numbers. A rational number is a number that can be
+represented as the quotient of two integers. For example, 1/2, 3/4, 64/2, and so
+forth are all rational numbers. (By 1/2 and so on we mean the everyday fraction, not
+the integer division this expression would produce in a C++ program.) Represent
+rational numbers as two values of type int , one for the numerator and one for
+the denominator. Call the class Rational . Include a constructor with two arguments
+that can be used to set the member variables of an object to any legitimate
+values. Also include a constructor that has only a single parameter of type int ;
+call this single parameter wholeNumber and define the constructor so that the
+object will be initialized to the rational number wholeNumber /1. Include a default
+constructor that initializes an object to 0 (that is, to 0/1). Overload the input and
+output operators >> and << . Numbers are to be input and output in the form
+1/2 , 15/32 , 300/401 , and so forth. Note that the numerator, the denominator, or
+both may contain a minus sign, so -1/2 , 15/-32 , and -300/-401 are also possible
+inputs. Overload all the following operators so that they correctly apply to the type
+Rational : == , < , <= , > , >= , + , - , * , and / . Write a test program to test your class.
+Hints: Two rational numbers a/b and c/d are equal if a*d equals c*b. If b and d are
+positive rational numbers, a/b is less than c/d provided a*d is less than c*b . You
+should include a function to normalize the values stored so that, after normalization,
+the denominator is positive and the numerator and denominator are as small
+as possible. For example, after normalization 4/-8 would be represented the same
+as -1/2.
+
+
+3. Define a class for complex numbers. A complex number is a number of the form
+a + b*i
+where for our purposes, a and b are numbers of type double , and i is a number
+that represents the quantity 2-1 . Represent a complex number as two values
+of type double . Name the member variables real and imaginary . (The variable
+for the number that is multiplied by i is the one called imaginary .) Call
+the class Complex . Include a constructor with two parameters of type double
+that can be used to set the member variables of an object to any values. Include a
+constructor that has only a single parameter of type double ; call this parameter
+realPart and define the constructor so that the object will be initialized to
+realPart + 0*i . Include a default constructor that initializes an object to 0 (that is, to
+0 + 0*i ). Overload all the following operators so that they correctly apply to the
+type Complex : == , + , - , * , >> , and << . You should also write a test program to test
+your class. Hints: To add or subtract two complex numbers, add or subtract the
+two member variables of type double . The product of two complex numbers is
+given by the following formula:
+(a + b*i)*(c + d*i) = = (a*c - b*d) + (a*d + b*c)*i
+In the interface file, you should define a constant i as follows:
+const Complex i(0, 1);
+This defined constant i will be the same as the i discussed above.
+
+
+4. Cumulatively modify the example from Display 8.7 as follows.
+a. In Display 8.7 , replace the private char members first and second with an
+array of char of size 100 and a private data member named size .
+Provide a default constructor that initializes size to 10 and sets the first 10 of the
+char positions to '#'. (This only uses 10 of the possible 100 slots.)
+Provide an accessor function that returns the value of the private member size .
+Test.
+b. Add an operator[] member that returns a char& that allows the user to access
+or to set any member of the private data array using a non-negative index that
+is less than size .
+Test.
+c. Add a constructor that takes an int argument, sz , that sets the first sz members
+of the char array to '#' .
+Test.
+d. Add a constructor that takes an int argument, sz , and an array of char of size
+sz . The constructor should set the first sz members of the private data array to
+the sz members of the argument array of char .
+Test.
+NOTES: When you test, you should test with known good values, with data on
+boundaries and with deliberately bad values. You are not required to put checks
+for index out of bounds errors in your code, but that would be a nice touch. Error
+handling alternatives: Issue an error message then die (that is, call exit(1) ) or give
+the user another chance to make a correct entry.
+
+5. Write the definition for a class named Vector2D that stores information about a
+two-dimensional vector. The class should have functions to get and set the x and
+y components, where x and y are integers.
+Next, overload the * operator so that it returns the dot product of two vectors. The
+dot product of two-dimensional vectors A and B is equal to
+(A x * B x ) + (A y * B y ).
+Finally, write a main subroutine that tests the * operation.
+
+6. Define a class named MyInteger that stores an integer and has functions to get and
+set the integer’s value. Then, overload the [] operator so that the index returns the
+digit in position i , where i = 0 is the least-significant digit. If no such digit exists
+then –1 should be returned.
+For example, if x is of type MyInteger and is set to 418, then x [0] should return 8,
+x [1] should return 1, x [2] should return 4, and x [3] should return –1.
+
+7. Define a class named PrimeNumber that stores a prime number. The default constructor
+should set the prime number to 1. Add another constructor that allows
+the caller to set the prime number. Also, add a function to get the prime number.
+Finally, overload the prefix and postfix ++ and -- operators so they return a
+PrimeNumber object that is the next largest prime number (for ++) and the next
+smallest prime number (for --). For example, if the object's prime number is set
+to 13, then invoking ++ should return a PrimeNumber object whose prime number
+is set to 17. Create an appropriate test program for the class.
+
+8. Do Programming Project 6.10, the definition of a Temperature class, except overload
+==, << and >> as member operators. The == operator should return true if the
+two temperature values are identical, while << should output the temperature in
+Fahrenheit and >> should input the temperature in Fahrenheit. Create appropriate
+tests for the overloaded operators.
+
+9. Programming Project 6.12 asked you to write a BoxOfProduce class that stored
+three bundles of fruits or vegetables (stored in an array of strings of size 3) to
+ship to a customer. Rewrite this class to use a vector instead of an array and add
+appropriate constructors, mutators, and accessors. The class should have a function
+to add additional fruits or vegetables to the box so there could be more
+than three bundles in one box. The output function should output all items
+in the box. Overload the + operator to return a new BoxOfProduce object that
+combines the vector contents of both operand BoxOfProduce objects. Test your
+functions and + operator from the main function. You do not have to implement
+the rest of Programming Project 6.12 for this Programming Project, only the
+changes to the BoxOfProduce class.
