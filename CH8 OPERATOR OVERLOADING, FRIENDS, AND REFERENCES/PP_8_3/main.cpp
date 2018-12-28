@@ -20,7 +20,6 @@ class Complex
 
     private:
         double real,imaginary;
-        double terms(double term);
 };
 
 const Complex i (0,1);
@@ -161,7 +160,4 @@ istream& operator >>(istream& inputStream, Complex& number)
  }
 
 
- double Complex::terms(double term)
-{
-    return term;
-}
+
