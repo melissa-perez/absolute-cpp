@@ -19,7 +19,11 @@ class Rational
         friend bool operator <= (const Rational& number1, const Rational& number2);
         friend bool operator > (const Rational& number1, const Rational& number2);
         friend bool operator >= (const Rational& number1, const Rational& number2);
-        friend operator +(const Rational& number1, const Rational& number2);
+        friend const Rational operator +(const Rational& number1, const Rational& number2);
+        friend const Rational operator -(const Rational& number1, const Rational& number2);
+        friend const Rational operator *(const Rational& number1, const Rational& number2);
+        friend const Rational operator /(const Rational& number1, const Rational& number2);
+
     private:
         int numerator, denominator;       
         void normalize();
@@ -42,7 +46,6 @@ Rational input()
           cout<<endl<<"Not a valid denominator."<<endl;
         }
     }
-
     return Rational(num1,num2);
 }
 
@@ -78,6 +81,15 @@ int main(int argc, char *argv[])
      cout<<frac1 <<" <= "<<frac2<<" = "<<(frac1 <=frac2 ? "true":"false")<<endl;
      cout<<frac1 <<" > "<<frac2<<" = "<<(frac1 >frac2 ? "true":"false")<<endl;
      cout<<frac1 <<" >= "<<frac2<<" = "<<(frac1 >=frac2 ? "true":"false")<<endl;
+
+     cout<<"Here we use operations on Rational objects. "<<endl;
+     cout<<frac1 <<" + "<<frac2<<" = "<<(frac1 + frac2)<<endl;
+     cout<<frac2 <<" - "<<frac1<<" = "<<(frac2 - frac1)<<endl;
+     cout<<frac2 <<" * "<<frac1<<" = "<<(frac2 * frac1)<<endl;
+     cout<<frac2 <<" / "<<frac1<<" = "<<(frac2 / frac1)<<endl;
+     cout<<frac1 <<" / "<<frac2<<" = "<<(frac1 / frac2)<<endl;
+
+
     return 0;
 }
 
@@ -117,7 +129,7 @@ void Rational::normalize()
 {
     int r, p = numerator, q=denominator;
 
-    while(r = p%q)
+    while(r = (p%q))
     {
        p = q;
        q = r;
@@ -125,8 +137,7 @@ void Rational::normalize()
     numerator/=q;
     denominator/=q;
 
-    cout<<numerator<<" "<<denominator<<endl;
-    if(numerator < 0 && denominator <0 ||denominator<0)
+    if((numerator < 0 && denominator <0 )||denominator<0)
     {
         numerator*=-1;
         denominator*=-1;
@@ -136,7 +147,15 @@ void Rational::normalize()
 ostream& operator <<(ostream& outs,
 const Rational& fraction)
 {
-    outs<<fraction.numerator<<"/"<<fraction.denominator;
+    if(fraction.denominator == 1)
+    {
+       outs<<fraction.numerator;
+    }
+    else
+    {
+        outs<<fraction.numerator<<"/"<<fraction.denominator;
+    }
+
     return outs;
 }
 
@@ -201,3 +220,39 @@ bool operator >= (const Rational& number1, const Rational& number2)
     return(a>=b);
 }
 
+const Rational operator +(const Rational& number1, const Rational& number2)
+{
+ int num = number1.numerator*number2.denominator + number2.numerator*number1.denominator;
+ cout<<"num:"<<num<<" "<<number1.numerator*number2.denominator<<endl;
+ return Rational(num, number1.denominator*number2.denominator);
+
+}
+
+
+const Rational operator -(const Rational& number1, const Rational& number2)
+{
+    int num = number1.numerator*number2.denominator - number2.numerator*number1.denominator;
+    return Rational(num, number1.denominator*number2.denominator);
+}
+
+const Rational operator *(const Rational& number1, const Rational& number2)
+{
+    int num = number1.numerator*number2.numerator,den= number2.denominator*number1.denominator;
+    return Rational(num, den);
+}
+
+const Rational operator /(const Rational& number1, const Rational& number2)
+{
+    int num = number1.numerator*number2.denominator,den= number2.numerator*number1.denominator;
+
+    if(den == 0)
+    {
+        cout<<"ERROR: Division by zero."<<endl;
+        exit(1);
+    }
+    else
+    {
+        return Rational(num, den);
+
+    }
+}
