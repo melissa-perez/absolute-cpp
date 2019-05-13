@@ -2,6 +2,9 @@
 
 using namespace std;
 
+// Does not work with negative integers and takes no input
+// Does not check if proper values
+
 class MyInteger{
 	
 	public:
