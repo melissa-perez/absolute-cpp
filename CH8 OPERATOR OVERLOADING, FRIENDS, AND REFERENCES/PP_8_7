@@ -1,0 +1,108 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+// Does not work with negative integers and takes no input
+// Does not check if proper values
+
+
+
+class PrimeNumber{
+	
+	public:
+		PrimeNumber(){prime = 1;}
+		PrimeNumber(int);
+		int GetPrimeNumber(){return prime;}
+		PrimeNumber operator++(); //prefix
+		PrimeNumber operator++(int); //postfix
+		PrimeNumber operator--(); //prefix
+		PrimeNumber operator--(int); //postfix
+		friend ostream& operator <<(ostream&,
+							        const PrimeNumber&);
+		
+	private:
+		int prime;
+		bool isPrime(int);
+};
+
+int main()
+{
+	PrimeNumber a;
+	cout << "Default constructor PrimeNumber: " << a.GetPrimeNumber() << endl;
+	cout << "Using prefix ++ operator: " << ++a;
+	PrimeNumber b(7);
+	cout << "Overloaded constructor PrimeNumber with a prime: " << b.GetPrimeNumber() << endl;
+	PrimeNumber c(9);
+	cout << "Overloaded constructor PrimeNumber without a prime: " << c.GetPrimeNumber() << endl;
+
+    return 0;
+}
+
+
+PrimeNumber::PrimeNumber(int num){
+	if(isPrime(num)){
+		prime = num;
+	}
+	else{
+		prime = 1;
+	}	
+}
+
+PrimeNumber PrimeNumber::operator++(){
+	
+	int temp = prime + 1;
+	while(!isPrime(temp)){
+	    temp += 1;
+	}	
+	return PrimeNumber(temp);
+}
+
+
+PrimeNumber PrimeNumber::operator++(int num){
+	
+	int temp = prime;
+	prime++;
+	return PrimeNumber(temp);
+}
+
+PrimeNumber PrimeNumber::operator--(){
+	
+	prime--;
+	return PrimeNumber(prime);
+}
+
+
+PrimeNumber PrimeNumber::operator--(int num){
+	
+	int temp = prime;
+	prime--;
+	return PrimeNumber(temp);
+}
+
+bool PrimeNumber::isPrime(int num){
+    
+	int temp = 2;
+	bool pFlag = true;
+	
+	if(num <= 0){
+		pFlag = false;    
+	}
+	else{
+		while(temp <= floor(sqrt(num)) && num > 0){
+			if(num % temp == 0){
+				pFlag = false;
+				break;
+		}
+			temp += 1;	
+		}	
+	}
+	return pFlag;	
+}
+
+
+ostream& operator <<(ostream& out, const PrimeNumber& num){
+	
+	out << num.prime << endl;
+	return out;
+}
