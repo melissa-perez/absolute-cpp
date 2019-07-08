@@ -2,98 +2,87 @@
 
 using namespace std;
 
-
+// Uses my code from 6.10
 class Temperature{
 public:
-    void setTempKelvin();
-    void setTempFahrenheit();
-    void setTempCelsius();
     void setTempKelvin(double);
     void setTempFahrenheit(double);
     void setTempCelsius(double);
-    double getTempKelvin();
-    double getTempFahrenheit();
-    double getTempCelsius();
+    double getTempKelvin() const;
+    double getTempFahrenheit() const;
+    double getTempCelsius() const;
     void displayTemperatures();
 
 private:
-    double kelvin=0,celsius=0,fahrenheit=0;
+    double kelvin = 0.0;
 };
 int main(int argc, char *argv[])
 {
-    Temperature temp1,temp2,temp3;
+    double userTemp = 0.0;
+    Temperature temp1;
 
+    cout << "Enter a temperature in Celsius: ";
+    cin >> userTemp;
 
-    temp1.setTempCelsius(32.0);
+    temp1.setTempCelsius(userTemp);
     temp1.displayTemperatures();
 
-    temp2.setTempKelvin();
-    temp2.displayTemperatures();
+    cout << "Enter a temperature in Kelvin: ";
+    cin >> userTemp;
 
-    temp3.setTempFahrenheit(98);
-    temp3.displayTemperatures();
+    temp1.setTempKelvin(userTemp);
+    temp1.displayTemperatures();
+
+
+    cout << "Enter a temperature in Fahrenheit: ";
+    cin >> userTemp;
+
+    temp1.setTempFahrenheit(userTemp);
+    temp1.displayTemperatures();
 
     return 0;
 }
 
-void Temperature::setTempKelvin(){
-    cout<<"Enter the temperature in Kelvin: ";
-    cin>>kelvin;
-    celsius=getTempKelvin()-273.15;
-    fahrenheit=getTempCelsius()*(9.0/5.0)+32.0;
+void Temperature::setTempKelvin(double K){
+
+    if(K >= 0)
+        kelvin = K;
 }
 
-void Temperature::setTempFahrenheit(){
-    cout<<"Enter the temperature in Fahrenheit: ";
-    cin>>fahrenheit;
-    celsius=(5/9)*(getTempFahrenheit()-32);
-    kelvin=getTempCelsius()+273.15;
+void Temperature::setTempFahrenheit(double F){
+
+    double C = 0.0;
+
+    C = (5.0 / 9) * (F - 32);
+    kelvin = C + 273.15;
 }
 
-void Temperature::setTempCelsius(){
-    cout<<"Enter the temperature in Celsius: ";
-    cin>>celsius;
-    kelvin=getTempCelsius()+273.15;
-    fahrenheit=getTempCelsius()*(9.0/5.0)+32.0;
+void Temperature::setTempCelsius(double C){
+
+    kelvin = C + 273.15;
 }
 
-void Temperature::setTempKelvin(double kelvinTemp){
-    kelvin=kelvinTemp;
-    celsius=getTempKelvin()-273.15;
-    fahrenheit=getTempCelsius()*(9.0/5.0)+32.0;
-}
-
-void Temperature::setTempFahrenheit(double fahrenTemp){
-    fahrenheit=fahrenTemp;
-    celsius=(5.0/9.0)*(getTempFahrenheit()-32.0);
-    kelvin=getTempCelsius()+273.15;
-}
-
-void Temperature::setTempCelsius(double celsiusTemp){
-    celsius=celsiusTemp;
-    kelvin=getTempCelsius()+273.15;
-    fahrenheit=getTempCelsius()*(9.0/5.0)+32.0;
-}
-
-double Temperature::getTempCelsius()
+double Temperature::getTempCelsius() const
 {
+    double celsius = kelvin - 273.15;
     return celsius;
 }
 
-double Temperature::getTempFahrenheit()
+double Temperature::getTempFahrenheit() const
 {
+    double fahrenheit = getTempCelsius() * (9.0 / 5.0) + 32.0;
     return fahrenheit;
 }
 
-double Temperature::getTempKelvin()
+double Temperature::getTempKelvin() const
 {
     return kelvin;
 }
 
 void Temperature::displayTemperatures()
 {
-    cout<<"\nTemperature in Kelvin "<<getTempKelvin()<<"K.\n";
-    cout<<"Temperature in Celsius "<<getTempCelsius()<<"C.\n";
-    cout<<"Temperature in Fahrenheit "<<getTempFahrenheit()<<"F.\n";
+    cout << "\nTemperature in Kelvin " << getTempKelvin() << " K.\n";
+    cout << "Temperature in Celsius " << getTempCelsius() << " C.\n";
+    cout << "Temperature in Fahrenheit " << getTempFahrenheit() << " F." << endl << endl;
 
 }
