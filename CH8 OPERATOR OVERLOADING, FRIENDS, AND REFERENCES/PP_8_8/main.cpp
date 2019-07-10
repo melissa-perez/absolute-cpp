@@ -3,6 +3,7 @@
 using namespace std;
 
 // Uses my code from 6.10
+// Does not sanitize input
 class Temperature{
 public:
     void setTempKelvin(double);
@@ -22,21 +23,27 @@ private:
     double kelvin = 0.0;
 };
 
-int main(int argc, char *argv[])
-{
-    double userTemp = 0.0;
+int main(int argc, char *argv[]){
+
     Temperature temp1, temp2;
 
-    cout << "Enter temp 1:";
+    cout << "Enter temperature 1 in Fahrenheit: ";
     cin >> temp1;
 
-    temp1.displayTemperatures();
-
-    cout << "Enter temp 2: ";
+    cout << "Enter temperature 2 in Fahrenheit: ";
     cin >> temp2;
 
-    temp2.displayTemperatures();
+    cout << temp1;
+    cout << temp2;
 
+    if(temp1 == temp2)
+    {
+        cout << "Temp 1 equals Temp 2!" << endl;
+    }
+    else
+    {
+        cout << "Temp 1 DOES NOT equals Temp 2!" << endl;
+    }
 
     return 0;
 }
@@ -60,25 +67,25 @@ void Temperature::setTempCelsius(double C){
     kelvin = C + 273.15;
 }
 
-double Temperature::getTempCelsius() const
-{
+double Temperature::getTempCelsius() const{
+
     double celsius = kelvin - 273.15;
     return celsius;
 }
 
-double Temperature::getTempFahrenheit() const
-{
+double Temperature::getTempFahrenheit() const{
+
     double fahrenheit = getTempCelsius() * (9.0 / 5.0) + 32.0;
     return fahrenheit;
 }
 
-double Temperature::getTempKelvin() const
-{
+double Temperature::getTempKelvin() const{
+
     return kelvin;
 }
 
-void Temperature::displayTemperatures()
-{
+void Temperature::displayTemperatures(){
+
     cout << "\nTemperature in Kelvin " << getTempKelvin() << " K.\n";
     cout << "Temperature in Celsius " << getTempCelsius() << " C.\n";
     cout << "Temperature in Fahrenheit " << getTempFahrenheit() << " F." << endl << endl;
@@ -87,8 +94,7 @@ void Temperature::displayTemperatures()
 
 
 bool operator ==(const Temperature& temp1,
-                              const Temperature& temp2)
-{
+                              const Temperature& temp2){
 
     return (temp1.kelvin == temp2.kelvin);
 }
@@ -102,8 +108,8 @@ ostream& operator <<(ostream& out, const Temperature& temp){
 istream& operator >>(istream& in, Temperature& temp){
 
     double F = 0.0;
-    in >> F;
 
+    in >> F;
     temp.setTempFahrenheit(F);
     return in;
 }
