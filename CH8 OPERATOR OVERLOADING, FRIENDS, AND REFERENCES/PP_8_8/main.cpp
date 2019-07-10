@@ -92,7 +92,6 @@ void Temperature::displayTemperatures(){
 
 }
 
-
 bool operator ==(const Temperature& temp1,
                               const Temperature& temp2){
 
