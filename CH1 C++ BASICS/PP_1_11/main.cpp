@@ -12,26 +12,26 @@ int main(int argc, char *argv[])
     double intpart = 0.00;
     double fractpart = 0.00;
 
-    cout<<"Enter the seconds to convert: ";
-    cin>>time;
+    cout << "Enter the seconds to convert: ";
+    cin >> time;
 
-    time=time/3600;
-   if(floor(time) >=1){
-        fractpart = modf(time,&intpart);
-        hours=intpart;
-        mins = fractpart*60;
-        fractpart=modf(mins,&intpart);
-        mins=intpart;
-        secs=fractpart*60;
+    time = time / 3600;
+    if (floor(time) >= 1){
+        fractpart = modf(time, &intpart);
+        hours = intpart;
+        mins = fractpart * 60;
+        fractpart = modf(mins, &intpart);
+        mins = intpart;
+        secs = fractpart * 60;
     }
    else{
-       time = time*60;
-       fractpart = modf(time,&intpart);
-       mins=intpart;
-       secs=fractpart;
+       time = time * 60;
+       fractpart = modf(time, &intpart);
+       mins = intpart;
+       secs = fractpart;
    }
 
-    cout<<"This is "<<hours<<" hour(s), "<<mins<<" minute(s), and "
-       <<secs<<" second(s). "<<endl;
+    cout << "This is "<< hours <<" hour(s), " << mins << " minute(s), and "
+       << secs << " second(s). " <<endl;
     return 0;
 }
