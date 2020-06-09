@@ -1,1 +1,111 @@
 
+Programming Projects
+Visit www.myprogramminglab.com to complete select exercises online and get instant
+feedback.
+1. Reread the code in Display 10.9 . Then, write a class TwoD that implements the
+two-dimensional dynamic array of double s using ideas from this display in its
+constructors. You should have a private member of type pointer to double to point
+to the dynamic array, and two int (or unsigned int ) values that are MaxRows and
+MaxCols .
+You should supply a default constructor for which you are to choose a default
+maximum row and column sizes and a parameterized constructor that allows the
+programmer to set maximum row and column sizes.
+Further, you should provide a void member function that allows setting a particular
+row and column entry and a member function that returns a particular row and
+column entry as a value of type double .
+Remark: It is difficult or impossible (depending on the details) to overload [ ] so
+it works as you would like for two-dimensional arrays. So simply use accessor and
+mutator functions using ordinary function notation.
+Overload the + operator as a friend function to add two two-dimensional arrays.
+This function should return the TwoD object whose i th row, j th column element is
+the sum of the i th row, j th column element of the left-hand operand TwoD object and
+the i th row, j th column element of the right-hand operand TwoD object.
+Provide a copy constructor, an overloaded operator = , and a destructor.
+Declare class member functions that do not change the data as const members.
+2. Using dynamic arrays, implement a polynomial class with polynomial addition,
+subtraction, and multiplication.
+Discussion: A variable in a polynomial does nothing but act as a placeholder for
+the coefficients. Hence, the only interesting thing about polynomials is the array
+of coefficients and the corresponding exponent. Think about the polynomial
+x*x*x + x + 1
+Where is the term in x*x ? One simple way to implement the polynomial class is to
+use an array of doubles to store the coefficients. The index of the array is the
+exponent of the corresponding term. If a term is missing, then it simply has a zero
+coefficient.
+There are techniques for representing polynomials of high degree with many missing
+terms. These use so-called sparse matrix techniques. Unless you already know
+these techniques, or learn very quickly, do not use these techniques.
+Provide a default constructor, a copy constructor, and a parameterized constructor
+that enables an arbitrary polynomial to be constructed.
+Supply an overloaded operator = and a destructor.
+Provide these operations:
+polynomial + polynomial, constant + polynomial, polynomial + constant,
+polynomial - polynomial, constant - polynomial, polynomial - constant.
+polynomial * polynomial, constant * polynomial, polynomial * constant,
+Supply functions to assign and extract coefficients, indexed by exponent.
+Supply a function to evaluate the polynomial at a value of type double .
+You should decide whether to implement these functions as members, friends, or
+standalone functions.
+3. Write a program that accepts a C-string input from the user and reverses the contents
+of the string. Your program should work by using two pointers. The “head”
+pointer should be set to the address of the first character in the string, and the
+“tail” pointer should be set to the address of the last character in the string (i.e., the
+character before the terminating null ). The program should swap the characters
+referenced by these pointers, increment “head” to point to the next character, decrement
+“tail” to point to the second-to-last character, and so on, until all characters
+have been swapped and the entire string reversed.
+4. Create a class named Student that has three member variables:
+name – A string that stores the name of the student
+numClasses – An integer that tracks how many courses the student is currently
+enrolled in
+classList – A dynamic array of strings used to store the names of the
+classes that the student is enrolled in
+Write appropriate constructor(s), mutator, and accessor functions for the class
+along with the following:
+• A function that inputs all values from the user, including the list of class names.
+This function will have to support input for an arbitrary number of classes.
+• A function that outputs the name and list of all courses.
+• A function that resets the number of classes to 0 and the classList to an
+empty list.
+• An overloaded assignment operator that correctly makes a new copy of the list
+of courses.
+• A destructor that releases all memory that has been allocated.
+Write a main function that tests all of your functions.
+5. This programming project is based on Programming Projects 7.8 and 5.7 . Write
+a program that outputs a histogram of grades for an assignment given to a class of
+students. The program should input each student’s grade as an integer and store
+the grade in a vector. Grades should be entered until the user enters -1 for a grade.
+The program should then scan through the vector and compute the histogram. In
+computing the histogram, the minimum value of a grade is 0, but your program
+should determine the maximum value entered by the user. Use a dynamic array to
+store the histogram. Output the histogram to the console.
+6. One problem with dynamic arrays is that once the array is created using the new
+operator the size cannot be changed. For example, you might want to add or delete
+entries from the array similar to the behavior of a vector . This project asks you
+to create a class called DynamicStringArray that includes member functions that
+allow it to emulate the behavior of a vector of strings.
+The class should have the following:
+• A private member variable called dynamicArray that references a dynamic
+array of type string.
+• A private member variable called size that holds the number of entries in
+the array.
+• A default constructor that sets the dynamic array to NULL and sets size to 0.
+• A function that returns size .
+• A function named addEntry that takes a string as input. The function should
+create a new dynamic array one element larger than dynamicArray , copy all
+elements from dynamicArray into the new array, add the new string onto the
+end of the new array, increment size, delete the old dynamicArray , and then
+set dynamicArray to the new array.
+• A function named deleteEntry that takes a string as input. The function
+should search dynamicArray for the string. If not found, it returns false . If
+found, it creates a new dynamic array one element smaller than dynamicArray .
+It should copy all elements except the input string into the new array, delete
+dynamicArray , decrement size, and return true .
+• A function named getEntry that takes an integer as input and returns the
+string at that index in dynamicArray . It should return NULL if the index is out
+of dynamicArray’s bounds.
+• A copy constructor that makes a copy of the input object’s dynamic array.
+• Overload the assignment operator so that the dynamic array is properly copied
+to the target object.
+• A destructor that frees up the memory allocated to the dynamic array.
+Embed your class in a suitable test program.
