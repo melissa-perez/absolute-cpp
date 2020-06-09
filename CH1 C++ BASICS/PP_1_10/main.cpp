@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
     double time = 0.00; //in seconds
     const double ACCELERATION = 32.0; //feet per second
-    double distance=0.00;
+    double distance = 0.00;
 
 
     cout << "Enter time in seconds: ";
