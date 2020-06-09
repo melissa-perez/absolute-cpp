@@ -1,6 +1,5 @@
 #include "DynamicStringArray.h"
 
-using namespace std;
 DynamicStringArray::~DynamicStringArray()
 {
    deallocateArray();
