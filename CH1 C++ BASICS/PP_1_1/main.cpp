@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     cin >> weight_cereal_box;
     cout << "\nThe weight of the cereal box in metric tons is: " <<
           weight_cereal_box / METRIC_TON << " ton(s).";
-    cout << "\nYou need " <<ceil(METRIC_TON/weight_cereal_box) << " boxes to yield a "
+    cout << "\nYou need " << ceil(METRIC_TON / weight_cereal_box) << " boxes to yield a "
         << "metric ton." << endl;
     return 0;
 }
