@@ -7,7 +7,6 @@
 #include <iostream>
 #include <cstring>
 
-
 using namespace std;
 
 const int MAX_SIZE = 100;
@@ -22,7 +21,7 @@ int main(int argc, char *argv[])
     cout << "Enter a sentence up to 100 characters long: ";
     cin.getline(sentence, MAX_SIZE);
 
-    while(sentence[index] != '\0'){
+    while (sentence[index] != '\0'){
         cout << sentence[index];
         index++;
     }
