@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
        secs = fractpart;
    }
 
-    cout << "This is "<< hours <<" hour(s), " << mins << " minute(s), and "
+    cout << "This is " << hours << " hour(s), " << mins << " minute(s), and "
        << secs << " second(s). " <<endl;
     return 0;
 }
