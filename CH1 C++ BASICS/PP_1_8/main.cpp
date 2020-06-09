@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
        << "Take the square root of what number? "
       << endl;
     cin >> n;
-    guess = n/2;
+    guess = n / 2;
     do{
         prev_guess = guess;
         r = n / guess;
