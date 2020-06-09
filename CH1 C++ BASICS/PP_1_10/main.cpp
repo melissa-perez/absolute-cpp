@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     cin >> time;
     distance = (0.5) * ACCELERATION * pow(time,2.00);
 
-    cout << "An object in freefall for " << time <<" secs will go a distance of " << distance
+    cout << "An object in freefall for " << time << " secs will go a distance of " << distance
        << " ft. \n";
 
     return 0;
