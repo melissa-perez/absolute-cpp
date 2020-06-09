@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         cout << "It is not LEGAL to hold the meeting per fire law regulations." << endl;
         
         if (-1 * diff == 1)
-           cout << "You must exclude "<< -1 * diff << " person." << endl;
+           cout << "You must exclude " << -1 * diff << " person." << endl;
         else
            cout << "You must exclude " << -1 * diff << " people."<<endl;
     }
