@@ -11,17 +11,17 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     const double PAY_INCREASE = 0.076;
-    double current_salary=0.00;
-    double previous_salary=0.00;
+    double current_salary = 0.00;
+    double previous_salary = 0.00;
 
-    cout<<"Enter your previous annual salary:$ ";
-    cin>>previous_salary;
+    cout << "Enter your previous annual salary:$ ";
+    cin >> previous_salary;
 
-    current_salary=PAY_INCREASE*previous_salary+previous_salary;
-    cout<<"\nThe retroactive pay is: $ "<<(current_salary-previous_salary)/6;
+    current_salary = PAY_INCREASE * previous_salary + previous_salary;
+    cout << "\nThe retroactive pay is: $ " << (current_salary - previous_salary) / 6;
 
-    cout<<"\nThe new monthly salary is: $ "<<current_salary/12;
-    cout<<"\nThe new annual salary is: $ "<<current_salary<<endl;
+    cout << "\nThe new monthly salary is: $ " << current_salary / 12;
+    cout << "\nThe new annual salary is: $ " << current_salary << endl;
     return 0;
 }
 
