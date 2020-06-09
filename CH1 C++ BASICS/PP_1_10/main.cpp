@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
     const double ACCELERATION = 32.0; //feet per second
     double distance = 0.00;
 
-
     cout << "Enter time in seconds: ";
     cin >> time;
     distance = (0.5) * ACCELERATION * pow(time,2.00);
