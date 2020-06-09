@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     int num_of_dep = 0;
     const double FULL_TIME = 40.0;
     double gross_pay = 0.00;
-    double wage = 16.78;
+    const double WAGE = 16.78;
     const double SSTAX = 0.06;
     double ss_amount = 0.00;
     const double FIT = 0.14;
@@ -30,13 +30,13 @@ int main(int argc, char *argv[])
     if (hours_worked > FULL_TIME){
     while (hours_worked > FULL_TIME){
         hours_worked -= FULL_TIME;
-        gross_pay += hours_worked * (wage + 1.5 * wage);
+        gross_pay += hours_worked * (WAGE + 1.5 * WAGE);
        }
-    gross_pay += FULL_TIME * wage;
+    gross_pay += FULL_TIME * WAGE;
     }
 
     else{
-        gross_pay += (hours_worked * wage);
+        gross_pay += (hours_worked * WAGE);
     }
 
     cout << "\nThe gross pay is: $" << gross_pay
