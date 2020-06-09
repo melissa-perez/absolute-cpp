@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
        << endl;
     cout << "\nThe amount witheld for State Income Tax: $" << sit_amount
        << endl;
-    cout << "\nThe amount witheld for Union Dues : $" << UNION_DUES 
+    cout << "\nThe amount witheld for Union Dues: $" << UNION_DUES 
        << endl;
 
     if (num_of_dep >= 3){
