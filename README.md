@@ -1,6 +1,8 @@
 # Absolute C++
 
-## Currently creating a whole new repo since this one all over the place.
+![C++ shield icon.](lang-c++-blue.svg)
+![Qt shield icon.](ide-qt-brightgreen.svg)
+
 5th Edition
 Qt Creator 4.2.1
 Based on Qt 5.8.0 (MSVC 2015, 32 bit) MinGW Compiler
